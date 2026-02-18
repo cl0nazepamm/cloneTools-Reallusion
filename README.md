@@ -1,4 +1,4 @@
-# CloneTools for iClone
+# iClone tools
 
 Tools to speed up data exchange between 3dsMax and iClone. Comes with a live posing feature.
 
