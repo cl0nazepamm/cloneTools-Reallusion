@@ -1,0 +1,18 @@
+{
+  "profile_name": "mhr_raw_pose",
+  "profile_version": 1,
+  "description": "Direct MHR 127-joint BVH export from SAM3DBody output (no retarget template).",
+  "root_joint_name": "root",
+  "drop_world_root": true,
+  "zero_root_offset": true,
+  "rotation_mode": "local_pose",
+  "rotation_order": "ZXY",
+  "source_quat_key": "quat_xyzw_global",
+  "source_coord_key": "coord",
+  "root_translation_mode": "pose_minus_rest",
+  "root_translation_scale": 100.0,
+  "root_translation_axis_multipliers": [1.0, -1.0, 1.0],
+  "fps": 30,
+  "include_joint_names": [],
+  "exclude_joint_names": []
+}
