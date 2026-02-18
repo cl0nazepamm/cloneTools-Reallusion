@@ -1,0 +1,5 @@
+docs/
+__pycache__/
+*.pyc
+.claude/
+PoseSync/
