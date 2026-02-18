@@ -1,0 +1,31 @@
+{
+  "biped_endo": {
+    "Version": "1.30.1707.1",
+    "Export Directory": "C:/Users/ogulc/Clone Library/ClonePipeline/CloneTools-iClone/PoseSync/server/assets",
+    "posesync": {
+      "transform": {
+        "source_x_deg": 0.0,
+        "source_mirror_axis": "none",
+        "non_root_x_deg": 0.0,
+        "root_x_deg": -90.0,
+        "pelvis_x_deg": 0.0,
+        "toes_x_deg": 0.0,
+        "flip_switches": {
+          "enable_non_root_x": false,
+          "enable_root_x": true,
+          "enable_pelvis_x": false,
+          "enable_toes_x": false
+        },
+        "locked_joints": [
+          "root",
+          "pelvis",
+          "cc_base_pelvis",
+          "bip001_pelvis",
+          "bip001 pelvis",
+          "bip001pelvis"
+        ],
+        "joint_offsets_deg": {}
+      }
+    }
+  }
+}

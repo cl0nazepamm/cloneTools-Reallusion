@@ -1,5 +1,24 @@
-docs/
+# Python bytecode
 __pycache__/
 *.pyc
+*.pyo
+
+# IDE / tooling
 .claude/
-PoseSync/
+
+# Runtime logs
+*.log
+
+# Generated output (created at runtime, never source)
+PoseSync/server/_generated_bvh/
+
+# Model checkpoints (multi-GB, downloaded at setup)
+PoseSync/server/checkpoints/
+
+# Vendored model weights & large binaries in MHR
+PoseSync/server/MHR/assets/
+PoseSync/server/MHR/assets.zip
+PoseSync/server/MHR/__MACOSX/
+
+# Reference docs (not source code)
+docs/

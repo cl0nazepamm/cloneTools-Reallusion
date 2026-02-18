@@ -1,0 +1,5039 @@
+{
+  "model": "MHR (Momentum Human Rig)",
+  "source": "Meta/Facebook Research",
+  "num_joints": 127,
+  "coordinate_system": {
+    "units": "centimeters",
+    "up": "Y",
+    "note": "MHR uses centimeters. SMPL uses meters."
+  },
+  "skeleton_state_format": {
+    "shape": "[batch, 127, 8]",
+    "fields": "quaternion (w,x,y,z) [0:4] + translation (x,y,z) [4:7] + scale [7]"
+  },
+  "joints": [
+    {
+      "index": 0,
+      "name": "body_world",
+      "parent_index": -1,
+      "parent_name": null,
+      "translation_offset": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "rest_pose_state": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "children": [
+        "root"
+      ]
+    },
+    {
+      "index": 1,
+      "name": "root",
+      "parent_index": 0,
+      "parent_name": "body_world",
+      "translation_offset": [
+        0.0,
+        92.398697,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -0.0,
+        -92.398697,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "rest_pose_state": [
+        0.0,
+        92.398697,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "children": [
+        "l_upleg",
+        "r_upleg",
+        "c_spine0"
+      ]
+    },
+    {
+      "index": 2,
+      "name": "l_upleg",
+      "parent_index": 1,
+      "parent_name": "root",
+      "translation_offset": [
+        8.20465,
+        -1.84058,
+        0.532572
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.515857,
+        0.493309,
+        -0.444141,
+        0.541551
+      ],
+      "inverse_bind_pose": [
+        88.718834,
+        -5.874529,
+        -19.048113,
+        0.515857,
+        -0.493309,
+        0.444141,
+        0.541551,
+        1.0
+      ],
+      "rest_pose_state": [
+        8.20465,
+        90.558113,
+        0.532572,
+        -0.515857,
+        0.493309,
+        -0.444141,
+        0.541551,
+        1.0
+      ],
+      "children": [
+        "l_lowleg",
+        "l_upleg_twist0_proc",
+        "l_upleg_twist1_proc",
+        "l_upleg_twist2_proc",
+        "l_upleg_twist3_proc",
+        "l_upleg_twist4_proc"
+      ]
+    },
+    {
+      "index": 3,
+      "name": "l_lowleg",
+      "parent_index": 2,
+      "parent_name": "l_upleg",
+      "translation_offset": [
+        41.969376,
+        -0.773127,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.000138,
+        0.002078,
+        0.013162,
+        0.999911
+      ],
+      "inverse_bind_pose": [
+        46.677811,
+        -6.325977,
+        -18.855526,
+        0.50847,
+        -0.501241,
+        0.437977,
+        0.546252,
+        1.0
+      ],
+      "rest_pose_state": [
+        13.210978,
+        48.951675,
+        -1.889591,
+        -0.50847,
+        0.501241,
+        -0.437977,
+        0.546252,
+        1.0
+      ],
+      "children": [
+        "l_foot",
+        "l_lowleg_twist1_proc",
+        "l_lowleg_twist2_proc",
+        "l_lowleg_twist3_proc",
+        "l_lowleg_twist4_proc"
+      ]
+    },
+    {
+      "index": 4,
+      "name": "l_foot",
+      "parent_index": 3,
+      "parent_name": "l_lowleg",
+      "translation_offset": [
+        42.0583,
+        0.0,
+        -0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        4.61951,
+        -6.325977,
+        -18.855526,
+        0.50847,
+        -0.501241,
+        0.437977,
+        0.546252,
+        1.0
+      ],
+      "rest_pose_state": [
+        18.000002,
+        7.388641,
+        -6.188438,
+        -0.50847,
+        0.501241,
+        -0.437977,
+        0.546252,
+        1.0
+      ],
+      "children": [
+        "l_talocrural"
+      ]
+    },
+    {
+      "index": 5,
+      "name": "l_talocrural",
+      "parent_index": 4,
+      "parent_name": "l_foot",
+      "translation_offset": [
+        5.1e-05,
+        0.0,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        4.61946,
+        -6.325977,
+        -18.855526,
+        0.50847,
+        -0.501241,
+        0.437977,
+        0.546252,
+        1.0
+      ],
+      "rest_pose_state": [
+        18.000008,
+        7.388591,
+        -6.188444,
+        -0.50847,
+        0.501241,
+        -0.437977,
+        0.546252,
+        1.0
+      ],
+      "children": [
+        "l_subtalar"
+      ]
+    },
+    {
+      "index": 6,
+      "name": "l_subtalar",
+      "parent_index": 5,
+      "parent_name": "l_talocrural",
+      "translation_offset": [
+        3.396574,
+        -0.898899,
+        0.467183
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.042846,
+        0.039796,
+        0.603088,
+        0.795528
+      ],
+      "inverse_bind_pose": [
+        -4.67172,
+        -4.873306,
+        -18.940477,
+        -0.061375,
+        0.708377,
+        -0.060696,
+        -0.700536,
+        1.0
+      ],
+      "rest_pose_state": [
+        18.878759,
+        3.99718,
+        -5.650737,
+        -0.061375,
+        0.708377,
+        -0.060696,
+        0.700536,
+        1.0
+      ],
+      "children": [
+        "l_transversetarsal"
+      ]
+    },
+    {
+      "index": 7,
+      "name": "l_transversetarsal",
+      "parent_index": 6,
+      "parent_name": "l_subtalar",
+      "translation_offset": [
+        -6.109605,
+        -1e-06,
+        -5e-06
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        -0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        1.437869,
+        -4.873308,
+        -18.940472,
+        -0.061375,
+        0.708377,
+        -0.060696,
+        -0.700537,
+        1.0
+      ],
+      "rest_pose_state": [
+        18.945738,
+        5.04799,
+        0.367451,
+        -0.061375,
+        0.708377,
+        -0.060696,
+        0.700537,
+        1.0
+      ],
+      "children": [
+        "l_ball"
+      ]
+    },
+    {
+      "index": 8,
+      "name": "l_ball",
+      "parent_index": 7,
+      "parent_name": "l_transversetarsal",
+      "translation_offset": [
+        -6.561383,
+        -4.156363,
+        0.439363
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.000864,
+        0.110326,
+        0.086844,
+        0.990094
+      ],
+      "inverse_bind_pose": [
+        11.797468,
+        -2.421471,
+        -17.17662,
+        0.006842,
+        0.784029,
+        -0.005416,
+        -0.620662,
+        1.0
+      ],
+      "rest_pose_state": [
+        19.46496,
+        2.082078,
+        7.540589,
+        0.006842,
+        0.784029,
+        -0.005416,
+        0.620662,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 9,
+      "name": "l_lowleg_twist1_proc",
+      "parent_index": 3,
+      "parent_name": "l_lowleg",
+      "translation_offset": [
+        8.41166,
+        0.0,
+        -0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        38.266151,
+        -6.325977,
+        -18.855526,
+        0.50847,
+        -0.501241,
+        0.437977,
+        0.546252,
+        1.0
+      ],
+      "rest_pose_state": [
+        14.168782,
+        40.639069,
+        -2.74936,
+        -0.50847,
+        0.501241,
+        -0.437977,
+        0.546252,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 10,
+      "name": "l_lowleg_twist2_proc",
+      "parent_index": 3,
+      "parent_name": "l_lowleg",
+      "translation_offset": [
+        16.82332,
+        0.0,
+        -0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        29.85449,
+        -6.325977,
+        -18.855526,
+        0.50847,
+        -0.501241,
+        0.437977,
+        0.546252,
+        1.0
+      ],
+      "rest_pose_state": [
+        15.126587,
+        32.326462,
+        -3.60913,
+        -0.50847,
+        0.501241,
+        -0.437977,
+        0.546252,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 11,
+      "name": "l_lowleg_twist3_proc",
+      "parent_index": 3,
+      "parent_name": "l_lowleg",
+      "translation_offset": [
+        25.23498,
+        0.0,
+        -0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        21.442831,
+        -6.325977,
+        -18.855526,
+        0.50847,
+        -0.501241,
+        0.437977,
+        0.546252,
+        1.0
+      ],
+      "rest_pose_state": [
+        16.084391,
+        24.013855,
+        -4.468899,
+        -0.50847,
+        0.501241,
+        -0.437977,
+        0.546252,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 12,
+      "name": "l_lowleg_twist4_proc",
+      "parent_index": 3,
+      "parent_name": "l_lowleg",
+      "translation_offset": [
+        33.646641,
+        0.0,
+        -0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        13.03117,
+        -6.325977,
+        -18.855526,
+        0.50847,
+        -0.501241,
+        0.437977,
+        0.546252,
+        1.0
+      ],
+      "rest_pose_state": [
+        17.042196,
+        15.701247,
+        -5.328669,
+        -0.50847,
+        0.501241,
+        -0.437977,
+        0.546252,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 13,
+      "name": "l_upleg_twist0_proc",
+      "parent_index": 2,
+      "parent_name": "l_upleg",
+      "translation_offset": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        88.718834,
+        -5.874529,
+        -19.048113,
+        0.515857,
+        -0.493309,
+        0.444141,
+        0.541551,
+        1.0
+      ],
+      "rest_pose_state": [
+        8.20465,
+        90.558113,
+        0.532572,
+        -0.515857,
+        0.493309,
+        -0.444141,
+        0.541551,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 14,
+      "name": "l_upleg_twist1_proc",
+      "parent_index": 2,
+      "parent_name": "l_upleg",
+      "translation_offset": [
+        10.492344,
+        -0.193282,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        78.226494,
+        -5.681248,
+        -19.048113,
+        0.515857,
+        -0.493309,
+        0.444141,
+        0.541551,
+        1.0
+      ],
+      "rest_pose_state": [
+        9.456232,
+        80.156509,
+        -0.072969,
+        -0.515857,
+        0.493309,
+        -0.444141,
+        0.541551,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 15,
+      "name": "l_upleg_twist2_proc",
+      "parent_index": 2,
+      "parent_name": "l_upleg",
+      "translation_offset": [
+        20.984688,
+        -0.386563,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        67.734146,
+        -5.487966,
+        -19.048113,
+        0.515857,
+        -0.493309,
+        0.444141,
+        0.541551,
+        1.0
+      ],
+      "rest_pose_state": [
+        10.707813,
+        69.754898,
+        -0.678509,
+        -0.515857,
+        0.493309,
+        -0.444141,
+        0.541551,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 16,
+      "name": "l_upleg_twist3_proc",
+      "parent_index": 2,
+      "parent_name": "l_upleg",
+      "translation_offset": [
+        31.477032,
+        -0.579845,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        57.241802,
+        -5.294684,
+        -19.048113,
+        0.515857,
+        -0.493309,
+        0.444141,
+        0.541551,
+        1.0
+      ],
+      "rest_pose_state": [
+        11.959395,
+        59.353287,
+        -1.28405,
+        -0.515857,
+        0.493309,
+        -0.444141,
+        0.541551,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 17,
+      "name": "l_upleg_twist4_proc",
+      "parent_index": 2,
+      "parent_name": "l_upleg",
+      "translation_offset": [
+        41.969376,
+        -0.773127,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        46.749458,
+        -5.101402,
+        -19.048113,
+        0.515857,
+        -0.493309,
+        0.444141,
+        0.541551,
+        1.0
+      ],
+      "rest_pose_state": [
+        13.210978,
+        48.951675,
+        -1.889591,
+        -0.515857,
+        0.493309,
+        -0.444141,
+        0.541551,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 18,
+      "name": "r_upleg",
+      "parent_index": 1,
+      "parent_name": "root",
+      "translation_offset": [
+        -8.20465,
+        -1.84058,
+        0.532572
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.541551,
+        0.444141,
+        0.493309,
+        0.515857
+      ],
+      "inverse_bind_pose": [
+        -88.718834,
+        5.874527,
+        19.048113,
+        0.541551,
+        0.444141,
+        0.493309,
+        -0.515857,
+        1.0
+      ],
+      "rest_pose_state": [
+        -8.20465,
+        90.558113,
+        0.532572,
+        0.541551,
+        0.444141,
+        0.493309,
+        0.515857,
+        1.0
+      ],
+      "children": [
+        "r_lowleg",
+        "r_upleg_twist0_proc",
+        "r_upleg_twist1_proc",
+        "r_upleg_twist2_proc",
+        "r_upleg_twist3_proc",
+        "r_upleg_twist4_proc"
+      ]
+    },
+    {
+      "index": 19,
+      "name": "r_lowleg",
+      "parent_index": 18,
+      "parent_name": "r_upleg",
+      "translation_offset": [
+        -41.969376,
+        0.773127,
+        -1e-06
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.000138,
+        0.002078,
+        0.013162,
+        0.999911
+      ],
+      "inverse_bind_pose": [
+        -46.677811,
+        6.325974,
+        18.85553,
+        0.546252,
+        0.437977,
+        0.501241,
+        -0.50847,
+        1.0
+      ],
+      "rest_pose_state": [
+        -13.210975,
+        48.951675,
+        -1.889591,
+        0.546252,
+        0.437977,
+        0.501241,
+        0.50847,
+        1.0
+      ],
+      "children": [
+        "r_foot",
+        "r_lowleg_twist1_proc",
+        "r_lowleg_twist2_proc",
+        "r_lowleg_twist3_proc",
+        "r_lowleg_twist4_proc"
+      ]
+    },
+    {
+      "index": 20,
+      "name": "r_foot",
+      "parent_index": 19,
+      "parent_name": "r_lowleg",
+      "translation_offset": [
+        -42.0583,
+        0.0,
+        -0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -4.61951,
+        6.325974,
+        18.85553,
+        0.546252,
+        0.437977,
+        0.501241,
+        -0.50847,
+        1.0
+      ],
+      "rest_pose_state": [
+        -17.999998,
+        7.38864,
+        -6.188438,
+        0.546252,
+        0.437977,
+        0.501241,
+        0.50847,
+        1.0
+      ],
+      "children": [
+        "r_talocrural"
+      ]
+    },
+    {
+      "index": 21,
+      "name": "r_talocrural",
+      "parent_index": 20,
+      "parent_name": "r_foot",
+      "translation_offset": [
+        -4.9e-05,
+        -0.0,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -4.619461,
+        6.325974,
+        18.85553,
+        0.546252,
+        0.437977,
+        0.501241,
+        -0.50847,
+        1.0
+      ],
+      "rest_pose_state": [
+        -18.000004,
+        7.388592,
+        -6.188444,
+        0.546252,
+        0.437977,
+        0.501241,
+        0.50847,
+        1.0
+      ],
+      "children": [
+        "r_subtalar"
+      ]
+    },
+    {
+      "index": 22,
+      "name": "r_subtalar",
+      "parent_index": 21,
+      "parent_name": "r_talocrural",
+      "translation_offset": [
+        -3.396576,
+        0.898903,
+        -0.467176
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.042846,
+        0.039796,
+        0.603088,
+        0.795528
+      ],
+      "inverse_bind_pose": [
+        4.671713,
+        4.873305,
+        18.940472,
+        0.700536,
+        0.060696,
+        0.708377,
+        -0.061375,
+        1.0
+      ],
+      "rest_pose_state": [
+        -18.878748,
+        3.997179,
+        -5.650733,
+        0.700536,
+        0.060696,
+        0.708377,
+        0.061375,
+        1.0
+      ],
+      "children": [
+        "r_transversetarsal"
+      ]
+    },
+    {
+      "index": 23,
+      "name": "r_transversetarsal",
+      "parent_index": 22,
+      "parent_name": "r_subtalar",
+      "translation_offset": [
+        6.109601,
+        -0.0,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -1.437888,
+        4.873305,
+        18.940472,
+        0.700536,
+        0.060696,
+        0.708377,
+        -0.061375,
+        1.0
+      ],
+      "rest_pose_state": [
+        -18.945732,
+        5.04799,
+        0.36745,
+        0.700536,
+        0.060696,
+        0.708377,
+        0.061375,
+        1.0
+      ],
+      "children": [
+        "r_ball"
+      ]
+    },
+    {
+      "index": 24,
+      "name": "r_ball",
+      "parent_index": 23,
+      "parent_name": "r_transversetarsal",
+      "translation_offset": [
+        6.561383,
+        4.156364,
+        -0.439356
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.000864,
+        0.110326,
+        0.086844,
+        0.990094
+      ],
+      "inverse_bind_pose": [
+        -11.797472,
+        2.421471,
+        17.176619,
+        0.620662,
+        0.005416,
+        0.784029,
+        0.006842,
+        1.0
+      ],
+      "rest_pose_state": [
+        -19.464954,
+        2.082078,
+        7.540589,
+        0.620662,
+        0.005417,
+        0.784029,
+        -0.006842,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 25,
+      "name": "r_lowleg_twist1_proc",
+      "parent_index": 19,
+      "parent_name": "r_lowleg",
+      "translation_offset": [
+        -8.41166,
+        0.0,
+        -0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -38.266151,
+        6.325974,
+        18.85553,
+        0.546252,
+        0.437977,
+        0.501241,
+        -0.50847,
+        1.0
+      ],
+      "rest_pose_state": [
+        -14.168779,
+        40.639069,
+        -2.749361,
+        0.546252,
+        0.437977,
+        0.501241,
+        0.50847,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 26,
+      "name": "r_lowleg_twist2_proc",
+      "parent_index": 19,
+      "parent_name": "r_lowleg",
+      "translation_offset": [
+        -16.82332,
+        0.0,
+        -0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -29.85449,
+        6.325974,
+        18.85553,
+        0.546252,
+        0.437977,
+        0.501241,
+        -0.50847,
+        1.0
+      ],
+      "rest_pose_state": [
+        -15.126584,
+        32.326462,
+        -3.60913,
+        0.546252,
+        0.437977,
+        0.501241,
+        0.50847,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 27,
+      "name": "r_lowleg_twist3_proc",
+      "parent_index": 19,
+      "parent_name": "r_lowleg",
+      "translation_offset": [
+        -25.23498,
+        0.0,
+        -0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -21.442831,
+        6.325974,
+        18.85553,
+        0.546252,
+        0.437977,
+        0.501241,
+        -0.50847,
+        1.0
+      ],
+      "rest_pose_state": [
+        -16.084389,
+        24.013855,
+        -4.4689,
+        0.546252,
+        0.437977,
+        0.501241,
+        0.50847,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 28,
+      "name": "r_lowleg_twist4_proc",
+      "parent_index": 19,
+      "parent_name": "r_lowleg",
+      "translation_offset": [
+        -33.646641,
+        0.0,
+        -0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -13.031169,
+        6.325974,
+        18.85553,
+        0.546252,
+        0.437977,
+        0.501241,
+        -0.50847,
+        1.0
+      ],
+      "rest_pose_state": [
+        -17.042194,
+        15.701246,
+        -5.328669,
+        0.546252,
+        0.437977,
+        0.501241,
+        0.50847,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 29,
+      "name": "r_upleg_twist0_proc",
+      "parent_index": 18,
+      "parent_name": "r_upleg",
+      "translation_offset": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -88.718834,
+        5.874527,
+        19.048113,
+        0.541551,
+        0.444141,
+        0.493309,
+        -0.515857,
+        1.0
+      ],
+      "rest_pose_state": [
+        -8.20465,
+        90.558113,
+        0.532572,
+        0.541551,
+        0.444141,
+        0.493309,
+        0.515857,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 30,
+      "name": "r_upleg_twist1_proc",
+      "parent_index": 18,
+      "parent_name": "r_upleg",
+      "translation_offset": [
+        -10.492344,
+        0.193282,
+        -0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -78.226494,
+        5.681245,
+        19.048113,
+        0.541551,
+        0.444141,
+        0.493309,
+        -0.515857,
+        1.0
+      ],
+      "rest_pose_state": [
+        -9.456231,
+        80.156509,
+        -0.072969,
+        0.541551,
+        0.444141,
+        0.493309,
+        0.515857,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 31,
+      "name": "r_upleg_twist2_proc",
+      "parent_index": 18,
+      "parent_name": "r_upleg",
+      "translation_offset": [
+        -20.984688,
+        0.386563,
+        -0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -67.734146,
+        5.487963,
+        19.048113,
+        0.541551,
+        0.444141,
+        0.493309,
+        -0.515857,
+        1.0
+      ],
+      "rest_pose_state": [
+        -10.707812,
+        69.754898,
+        -0.67851,
+        0.541551,
+        0.444141,
+        0.493309,
+        0.515857,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 32,
+      "name": "r_upleg_twist3_proc",
+      "parent_index": 18,
+      "parent_name": "r_upleg",
+      "translation_offset": [
+        -31.477032,
+        0.579845,
+        -0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -57.241802,
+        5.294682,
+        19.048113,
+        0.541551,
+        0.444141,
+        0.493309,
+        -0.515857,
+        1.0
+      ],
+      "rest_pose_state": [
+        -11.959394,
+        59.353283,
+        -1.28405,
+        0.541551,
+        0.444141,
+        0.493309,
+        0.515857,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 33,
+      "name": "r_upleg_twist4_proc",
+      "parent_index": 18,
+      "parent_name": "r_upleg",
+      "translation_offset": [
+        -41.969376,
+        0.773127,
+        -1e-06
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -46.749458,
+        5.1014,
+        19.048113,
+        0.541551,
+        0.444141,
+        0.493309,
+        -0.515857,
+        1.0
+      ],
+      "rest_pose_state": [
+        -13.210975,
+        48.951675,
+        -1.889591,
+        0.541551,
+        0.444141,
+        0.493309,
+        0.515857,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 34,
+      "name": "c_spine0",
+      "parent_index": 1,
+      "parent_name": "root",
+      "translation_offset": [
+        0.0,
+        2.021996,
+        -3.253568
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.489931,
+        0.50987,
+        0.489931,
+        0.50987
+      ],
+      "inverse_bind_pose": [
+        -94.475334,
+        -0.513586,
+        0.0,
+        -0.489931,
+        -0.50987,
+        -0.489931,
+        0.50987,
+        1.0
+      ],
+      "rest_pose_state": [
+        0.0,
+        94.420692,
+        -3.253568,
+        0.489931,
+        0.50987,
+        0.489931,
+        0.50987,
+        1.0
+      ],
+      "children": [
+        "c_spine1"
+      ]
+    },
+    {
+      "index": 35,
+      "name": "c_spine1",
+      "parent_index": 34,
+      "parent_name": "c_spine0",
+      "translation_offset": [
+        10.988398,
+        1.543144,
+        -0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -105.463737,
+        -2.05673,
+        0.0,
+        -0.489931,
+        -0.50987,
+        -0.489931,
+        0.50987,
+        1.0
+      ],
+      "rest_pose_state": [
+        0.0,
+        105.461876,
+        -2.14976,
+        0.489931,
+        0.50987,
+        0.489931,
+        0.50987,
+        1.0
+      ],
+      "children": [
+        "c_spine2"
+      ]
+    },
+    {
+      "index": 36,
+      "name": "c_spine2",
+      "parent_index": 35,
+      "parent_name": "c_spine1",
+      "translation_offset": [
+        11.031541,
+        -2.157185,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -116.495277,
+        0.100455,
+        0.0,
+        -0.489931,
+        -0.50987,
+        -0.489931,
+        0.50987,
+        1.0
+      ],
+      "rest_pose_state": [
+        0.0,
+        116.398643,
+        -4.745059,
+        0.489931,
+        0.50987,
+        0.489931,
+        0.50987,
+        1.0
+      ],
+      "children": [
+        "c_spine3"
+      ]
+    },
+    {
+      "index": 37,
+      "name": "c_spine3",
+      "parent_index": 36,
+      "parent_name": "c_spine2",
+      "translation_offset": [
+        18.377258,
+        1.766158,
+        -0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -134.872528,
+        -1.665703,
+        0.0,
+        -0.489931,
+        -0.50987,
+        -0.489931,
+        0.50987,
+        1.0
+      ],
+      "rest_pose_state": [
+        0.0,
+        134.831711,
+        -3.713009,
+        0.489931,
+        0.50987,
+        0.489931,
+        0.50987,
+        1.0
+      ],
+      "children": [
+        "r_clavicle",
+        "l_clavicle",
+        "c_neck"
+      ]
+    },
+    {
+      "index": 38,
+      "name": "r_clavicle",
+      "parent_index": 37,
+      "parent_name": "c_spine3",
+      "translation_offset": [
+        5.313288,
+        10.289214,
+        -2.82178
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.646909,
+        0.222661,
+        0.707495,
+        0.177149
+      ],
+      "inverse_bind_pose": [
+        9.9739,
+        6.309535,
+        -140.227173,
+        0.668273,
+        0.174168,
+        0.226771,
+        0.686769,
+        1.0
+      ],
+      "rest_pose_state": [
+        -2.82178,
+        140.550995,
+        6.356183,
+        0.668273,
+        0.174168,
+        0.226771,
+        -0.686769,
+        1.0
+      ],
+      "children": [
+        "r_uparm"
+      ]
+    },
+    {
+      "index": 39,
+      "name": "r_uparm",
+      "parent_index": 38,
+      "parent_name": "r_clavicle",
+      "translation_offset": [
+        -17.650517,
+        -0.0,
+        -0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.107322,
+        -0.479823,
+        0.182484,
+        0.851441
+      ],
+      "inverse_bind_pose": [
+        -93.409195,
+        50.188889,
+        -96.033195,
+        0.783293,
+        0.331535,
+        -0.234203,
+        0.470835,
+        1.0
+      ],
+      "rest_pose_state": [
+        -17.586102,
+        141.940002,
+        -3.215975,
+        0.783293,
+        0.331535,
+        -0.234203,
+        -0.470835,
+        1.0
+      ],
+      "children": [
+        "r_lowarm",
+        "r_uparm_twist0_proc",
+        "r_uparm_twist1_proc",
+        "r_uparm_twist2_proc",
+        "r_uparm_twist3_proc",
+        "r_uparm_twist4_proc"
+      ]
+    },
+    {
+      "index": 40,
+      "name": "r_lowarm",
+      "parent_index": 39,
+      "parent_name": "r_uparm",
+      "translation_offset": [
+        -25.680094,
+        0.046336,
+        -0.000329
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.002379,
+        -0.007679,
+        0.295853,
+        0.9552
+      ],
+      "inverse_bind_pose": [
+        -29.069973,
+        79.646927,
+        -95.577835,
+        0.843368,
+        0.088001,
+        -0.369812,
+        0.379769,
+        1.0
+      ],
+      "rest_pose_state": [
+        -34.7897,
+        122.922997,
+        -1.852445,
+        0.843368,
+        0.088001,
+        -0.369812,
+        -0.379769,
+        1.0
+      ],
+      "children": [
+        "r_wrist_twist",
+        "r_lowarm_twist1_proc",
+        "r_lowarm_twist2_proc",
+        "r_lowarm_twist3_proc",
+        "r_lowarm_twist4_proc"
+      ]
+    },
+    {
+      "index": 41,
+      "name": "r_wrist_twist",
+      "parent_index": 40,
+      "parent_name": "r_lowarm",
+      "translation_offset": [
+        -27.000002,
+        2e-06,
+        -0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.837665,
+        -0.031997,
+        0.036723,
+        0.544008
+      ],
+      "inverse_bind_pose": [
+        -12.354939,
+        -119.032387,
+        -34.083496,
+        0.132078,
+        -0.280725,
+        -0.315827,
+        0.896661,
+        1.0
+      ],
+      "rest_pose_state": [
+        -53.986416,
+        111.331337,
+        13.184834,
+        0.132078,
+        -0.280725,
+        -0.315827,
+        -0.896661,
+        1.0
+      ],
+      "children": [
+        "r_wrist"
+      ]
+    },
+    {
+      "index": 42,
+      "name": "r_wrist",
+      "parent_index": 41,
+      "parent_name": "r_wrist_twist",
+      "translation_offset": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -12.354939,
+        -119.032387,
+        -34.083496,
+        0.132078,
+        -0.280725,
+        -0.315827,
+        0.896661,
+        1.0
+      ],
+      "rest_pose_state": [
+        -53.986416,
+        111.331337,
+        13.184834,
+        0.132078,
+        -0.280725,
+        -0.315827,
+        -0.896661,
+        1.0
+      ],
+      "children": [
+        "r_pinky0",
+        "r_ring1",
+        "r_middle1",
+        "r_index1",
+        "r_thumb0"
+      ]
+    },
+    {
+      "index": 43,
+      "name": "r_pinky0",
+      "parent_index": 42,
+      "parent_name": "r_wrist",
+      "translation_offset": [
+        -2.040412,
+        -1.070484,
+        -2.263171
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.207036,
+        -0.140343,
+        0.018312,
+        0.968042
+      ],
+      "inverse_bind_pose": [
+        -29.343225,
+        -95.085518,
+        -71.635559,
+        0.264034,
+        -0.082945,
+        -0.39881,
+        0.874275,
+        1.0
+      ],
+      "rest_pose_state": [
+        -55.563038,
+        108.570053,
+        12.618498,
+        0.264034,
+        -0.082945,
+        -0.39881,
+        -0.874275,
+        1.0
+      ],
+      "children": [
+        "r_pinky1"
+      ]
+    },
+    {
+      "index": 44,
+      "name": "r_pinky1",
+      "parent_index": 43,
+      "parent_name": "r_pinky0",
+      "translation_offset": [
+        -4.565054,
+        -0.0001,
+        0.000219
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.091113,
+        0.004071,
+        0.028129,
+        0.995435
+      ],
+      "inverse_bind_pose": [
+        -29.92017,
+        -104.997711,
+        -53.545708,
+        0.182461,
+        -0.12989,
+        -0.41295,
+        0.882785,
+        1.0
+      ],
+      "rest_pose_state": [
+        -58.613079,
+        105.586678,
+        14.242202,
+        0.182461,
+        -0.12989,
+        -0.41295,
+        -0.882785,
+        1.0
+      ],
+      "children": [
+        "r_pinky2"
+      ]
+    },
+    {
+      "index": 45,
+      "name": "r_pinky2",
+      "parent_index": 44,
+      "parent_name": "r_pinky1",
+      "translation_offset": [
+        -3.072345,
+        -0.000309,
+        -0.000253
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.037617,
+        -0.042938,
+        -0.013286,
+        0.998281
+      ],
+      "inverse_bind_pose": [
+        -28.937178,
+        -101.501709,
+        -58.927231,
+        0.199349,
+        -0.073804,
+        -0.413232,
+        0.885467,
+        1.0
+      ],
+      "rest_pose_state": [
+        -60.533699,
+        103.491989,
+        15.409604,
+        0.199349,
+        -0.073804,
+        -0.413232,
+        -0.885467,
+        1.0
+      ],
+      "children": [
+        "r_pinky3"
+      ]
+    },
+    {
+      "index": 46,
+      "name": "r_pinky3",
+      "parent_index": 45,
+      "parent_name": "r_pinky2",
+      "translation_offset": [
+        -2.030762,
+        0.000389,
+        0.000343
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.000645,
+        0.049171,
+        -0.024019,
+        0.998501
+      ],
+      "inverse_bind_pose": [
+        -16.094929,
+        -102.613876,
+        -60.913353,
+        0.220571,
+        -0.11271,
+        -0.381495,
+        0.890565,
+        1.0
+      ],
+      "rest_pose_state": [
+        -61.849098,
+        102.065994,
+        16.009804,
+        0.220571,
+        -0.11271,
+        -0.381495,
+        -0.890565,
+        1.0
+      ],
+      "children": [
+        "r_pinky_null"
+      ]
+    },
+    {
+      "index": 47,
+      "name": "r_pinky_null",
+      "parent_index": 46,
+      "parent_name": "r_pinky3",
+      "translation_offset": [
+        -2.039926,
+        -0.000317,
+        -0.000253
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -14.055003,
+        -102.613564,
+        -60.913097,
+        0.220571,
+        -0.11271,
+        -0.381495,
+        0.890565,
+        1.0
+      ],
+      "rest_pose_state": [
+        -63.243198,
+        100.780991,
+        16.762505,
+        0.220571,
+        -0.11271,
+        -0.381495,
+        -0.890565,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 48,
+      "name": "r_ring1",
+      "parent_index": 42,
+      "parent_name": "r_wrist",
+      "translation_offset": [
+        -7.502427,
+        -0.781418,
+        -1.709877
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.053159,
+        -0.123103,
+        0.049813,
+        0.989716
+      ],
+      "inverse_bind_pose": [
+        -25.606064,
+        -112.77726,
+        -40.994026,
+        0.125523,
+        -0.157247,
+        -0.388428,
+        0.899245,
+        1.0
+      ],
+      "rest_pose_state": [
+        -59.027298,
+        106.331993,
+        16.253504,
+        0.125523,
+        -0.157247,
+        -0.388428,
+        -0.899245,
+        1.0
+      ],
+      "children": [
+        "r_ring2"
+      ]
+    },
+    {
+      "index": 49,
+      "name": "r_ring2",
+      "parent_index": 48,
+      "parent_name": "r_ring1",
+      "translation_offset": [
+        -3.899408,
+        0.000139,
+        0.000102
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.033633,
+        -0.00279,
+        0.005676,
+        0.999414
+      ],
+      "inverse_bind_pose": [
+        -23.218536,
+        -109.51564,
+        -48.34938,
+        0.153717,
+        -0.142294,
+        -0.398943,
+        0.892731,
+        1.0
+      ],
+      "rest_pose_state": [
+        -61.557297,
+        103.761993,
+        17.736605,
+        0.153717,
+        -0.142294,
+        -0.398943,
+        -0.892731,
+        1.0
+      ],
+      "children": [
+        "r_ring3"
+      ]
+    },
+    {
+      "index": 50,
+      "name": "r_ring3",
+      "parent_index": 49,
+      "parent_name": "r_ring2",
+      "translation_offset": [
+        -2.657669,
+        -0.00026,
+        -0.000122
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.003477,
+        0.029179,
+        -0.025029,
+        0.999255
+      ],
+      "inverse_bind_pose": [
+        -12.188844,
+        -109.993164,
+        -50.069489,
+        0.171909,
+        -0.163003,
+        -0.372312,
+        0.897364,
+        1.0
+      ],
+      "rest_pose_state": [
+        -63.261196,
+        101.984993,
+        18.737703,
+        0.171909,
+        -0.163003,
+        -0.372311,
+        -0.897364,
+        1.0
+      ],
+      "children": [
+        "r_ring_null"
+      ]
+    },
+    {
+      "index": 51,
+      "name": "r_ring_null",
+      "parent_index": 50,
+      "parent_name": "r_ring3",
+      "translation_offset": [
+        -2.215413,
+        0.000167,
+        0.000148
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -9.97343,
+        -109.99334,
+        -50.069633,
+        0.171909,
+        -0.163003,
+        -0.372312,
+        0.897364,
+        1.0
+      ],
+      "rest_pose_state": [
+        -64.744797,
+        100.62899,
+        19.669504,
+        0.171909,
+        -0.163003,
+        -0.372311,
+        -0.897364,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 52,
+      "name": "r_middle1",
+      "parent_index": 42,
+      "parent_name": "r_wrist",
+      "translation_offset": [
+        -8.197639,
+        -0.38265,
+        0.209325
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.009066,
+        -0.051466,
+        0.051836,
+        0.997287
+      ],
+      "inverse_bind_pose": [
+        -19.978882,
+        -116.76358,
+        -35.187397,
+        0.109044,
+        -0.2378,
+        -0.370792,
+        0.891108,
+        1.0
+      ],
+      "rest_pose_state": [
+        -58.923599,
+        107.089996,
+        18.187504,
+        0.109044,
+        -0.2378,
+        -0.370792,
+        -0.891108,
+        1.0
+      ],
+      "children": [
+        "r_middle2"
+      ]
+    },
+    {
+      "index": 53,
+      "name": "r_middle2",
+      "parent_index": 52,
+      "parent_name": "r_middle1",
+      "translation_offset": [
+        -4.292594,
+        7.2e-05,
+        3.9e-05
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.011228,
+        -0.004379,
+        -0.001978,
+        0.999925
+      ],
+      "inverse_bind_pose": [
+        -15.544805,
+        -116.007378,
+        -37.664474,
+        0.117888,
+        -0.229501,
+        -0.372149,
+        0.891592,
+        1.0
+      ],
+      "rest_pose_state": [
+        -61.550396,
+        104.47599,
+        20.353905,
+        0.117888,
+        -0.229501,
+        -0.372149,
+        -0.891592,
+        1.0
+      ],
+      "children": [
+        "r_middle3"
+      ]
+    },
+    {
+      "index": 54,
+      "name": "r_middle3",
+      "parent_index": 53,
+      "parent_name": "r_middle2",
+      "translation_offset": [
+        -2.754849,
+        6.5e-05,
+        9.3e-05
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.03432,
+        -0.004612,
+        -0.093007,
+        0.995063
+      ],
+      "inverse_bind_pose": [
+        8.281479,
+        -113.558395,
+        -45.561356,
+        0.167534,
+        -0.20052,
+        -0.295808,
+        0.918816,
+        1.0
+      ],
+      "rest_pose_state": [
+        -63.251999,
+        102.796989,
+        21.723104,
+        0.167534,
+        -0.20052,
+        -0.295808,
+        -0.918816,
+        1.0
+      ],
+      "children": [
+        "r_middle_null"
+      ]
+    },
+    {
+      "index": 55,
+      "name": "r_middle_null",
+      "parent_index": 54,
+      "parent_name": "r_middle3",
+      "translation_offset": [
+        -2.348845,
+        -1e-05,
+        -1.7e-05
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        10.630324,
+        -113.558388,
+        -45.561337,
+        0.167534,
+        -0.20052,
+        -0.295808,
+        0.918816,
+        1.0
+      ],
+      "rest_pose_state": [
+        -65.0009,
+        101.677994,
+        22.821404,
+        0.167534,
+        -0.20052,
+        -0.295808,
+        -0.918816,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 56,
+      "name": "r_index1",
+      "parent_index": 42,
+      "parent_name": "r_wrist",
+      "translation_offset": [
+        -8.232696,
+        -0.860246,
+        2.391737
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.030683,
+        -0.018856,
+        0.043281,
+        0.998414
+      ],
+      "inverse_bind_pose": [
+        -15.650445,
+        -119.321121,
+        -28.803209,
+        0.086251,
+        -0.27878,
+        -0.348012,
+        0.890915,
+        1.0
+      ],
+      "rest_pose_state": [
+        -57.723598,
+        107.610992,
+        19.998804,
+        0.086251,
+        -0.27878,
+        -0.348012,
+        -0.890915,
+        1.0
+      ],
+      "children": [
+        "r_index2"
+      ]
+    },
+    {
+      "index": 57,
+      "name": "r_index2",
+      "parent_index": 56,
+      "parent_name": "r_index1",
+      "translation_offset": [
+        -3.792524,
+        0.000413,
+        0.000136
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.025852,
+        -0.007116,
+        0.003293,
+        0.999635
+      ],
+      "inverse_bind_pose": [
+        -13.090796,
+        -117.595665,
+        -34.752861,
+        0.105857,
+        -0.263626,
+        -0.35864,
+        0.889198,
+        1.0
+      ],
+      "rest_pose_state": [
+        -60.008198,
+        105.441994,
+        22.110504,
+        0.105857,
+        -0.263626,
+        -0.35864,
+        -0.889198,
+        1.0
+      ],
+      "children": [
+        "r_index3"
+      ]
+    },
+    {
+      "index": 58,
+      "name": "r_index3",
+      "parent_index": 57,
+      "parent_name": "r_index2",
+      "translation_offset": [
+        -2.430618,
+        -0.000435,
+        -0.000243
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.016056,
+        -0.027149,
+        -0.072034,
+        0.996903
+      ],
+      "inverse_bind_pose": [
+        4.291369,
+        -116.87796,
+        -38.355572,
+        0.12906,
+        -0.225285,
+        -0.300583,
+        0.917736,
+        1.0
+      ],
+      "rest_pose_state": [
+        -61.475498,
+        104.026993,
+        23.434404,
+        0.12906,
+        -0.225285,
+        -0.300583,
+        -0.917736,
+        1.0
+      ],
+      "children": [
+        "r_index_null"
+      ]
+    },
+    {
+      "index": 59,
+      "name": "r_index_null",
+      "parent_index": 58,
+      "parent_name": "r_index3",
+      "translation_offset": [
+        -2.122301,
+        0.000505,
+        0.00024
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        6.413671,
+        -116.878464,
+        -38.355808,
+        0.12906,
+        -0.225285,
+        -0.300583,
+        0.917736,
+        1.0
+      ],
+      "rest_pose_state": [
+        -62.999096,
+        102.979996,
+        24.476805,
+        0.12906,
+        -0.225285,
+        -0.300583,
+        -0.917736,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 60,
+      "name": "r_thumb0",
+      "parent_index": 42,
+      "parent_name": "r_wrist",
+      "translation_offset": [
+        -0.640145,
+        -1.284131,
+        1.086249
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.375387,
+        0.424584,
+        -0.007779,
+        0.823864
+      ],
+      "inverse_bind_pose": [
+        -18.704533,
+        -109.954803,
+        52.904449,
+        0.091501,
+        0.729518,
+        0.091765,
+        -0.671573,
+        1.0
+      ],
+      "rest_pose_state": [
+        -53.119198,
+        110.482994,
+        14.514105,
+        -0.091501,
+        -0.729518,
+        -0.091765,
+        -0.671573,
+        1.0
+      ],
+      "children": [
+        "r_thumb1"
+      ]
+    },
+    {
+      "index": 61,
+      "name": "r_thumb1",
+      "parent_index": 60,
+      "parent_name": "r_thumb0",
+      "translation_offset": [
+        -2.48519,
+        9.4e-05,
+        1.7e-05
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.26023,
+        0.024331,
+        0.125678,
+        0.957023
+      ],
+      "inverse_bind_pose": [
+        -42.533489,
+        -61.218102,
+        97.955467,
+        0.351784,
+        0.726886,
+        -0.015393,
+        -0.589617,
+        1.0
+      ],
+      "rest_pose_state": [
+        -52.917297,
+        109.844994,
+        16.907505,
+        -0.351784,
+        -0.726886,
+        0.015393,
+        -0.589617,
+        1.0
+      ],
+      "children": [
+        "r_thumb2"
+      ]
+    },
+    {
+      "index": 62,
+      "name": "r_thumb2",
+      "parent_index": 61,
+      "parent_name": "r_thumb1",
+      "translation_offset": [
+        -3.251409,
+        -0.000189,
+        0.000143
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.082704,
+        -0.076962,
+        -0.084062,
+        0.990036
+      ],
+      "inverse_bind_pose": [
+        -12.561803,
+        -81.327431,
+        90.077797,
+        0.237227,
+        0.70511,
+        -0.031762,
+        -0.667484,
+        1.0
+      ],
+      "rest_pose_state": [
+        -52.731297,
+        108.240997,
+        19.729605,
+        -0.237227,
+        -0.70511,
+        0.031762,
+        -0.667484,
+        1.0
+      ],
+      "children": [
+        "r_thumb3"
+      ]
+    },
+    {
+      "index": 63,
+      "name": "r_thumb3",
+      "parent_index": 62,
+      "parent_name": "r_thumb2",
+      "translation_offset": [
+        -3.379275,
+        0.000196,
+        -0.000141
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.083506,
+        0.065016,
+        -0.058274,
+        0.992675
+      ],
+      "inverse_bind_pose": [
+        -13.020306,
+        -66.551811,
+        101.063667,
+        0.252204,
+        0.754514,
+        -0.113884,
+        -0.595091,
+        1.0
+      ],
+      "rest_pose_state": [
+        -52.743599,
+        107.253998,
+        22.961504,
+        -0.252204,
+        -0.754514,
+        0.113884,
+        -0.595091,
+        1.0
+      ],
+      "children": [
+        "r_thumb_null"
+      ]
+    },
+    {
+      "index": 64,
+      "name": "r_thumb_null",
+      "parent_index": 63,
+      "parent_name": "r_thumb3",
+      "translation_offset": [
+        -2.546055,
+        -9.1e-05,
+        8.1e-05
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -10.474251,
+        -66.551727,
+        101.063583,
+        0.252204,
+        0.754514,
+        -0.113884,
+        -0.595091,
+        1.0
+      ],
+      "rest_pose_state": [
+        -52.324699,
+        106.629997,
+        25.394104,
+        -0.252204,
+        -0.754514,
+        0.113884,
+        -0.595091,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 65,
+      "name": "r_lowarm_twist1_proc",
+      "parent_index": 40,
+      "parent_name": "r_lowarm",
+      "translation_offset": [
+        -5.400001,
+        1e-06,
+        -1e-06
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        -0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -23.669971,
+        79.646912,
+        -95.577843,
+        0.843368,
+        0.088001,
+        -0.369812,
+        0.379769,
+        1.0
+      ],
+      "rest_pose_state": [
+        -38.629044,
+        120.604668,
+        1.155011,
+        0.843368,
+        0.088001,
+        -0.369812,
+        -0.379769,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 66,
+      "name": "r_lowarm_twist2_proc",
+      "parent_index": 40,
+      "parent_name": "r_lowarm",
+      "translation_offset": [
+        -10.800001,
+        0.0,
+        1e-06
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        -0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -18.269972,
+        79.646912,
+        -95.577843,
+        0.843368,
+        0.088001,
+        -0.369812,
+        0.379769,
+        1.0
+      ],
+      "rest_pose_state": [
+        -42.468388,
+        118.286331,
+        4.162467,
+        0.843368,
+        0.088001,
+        -0.369812,
+        -0.379769,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 67,
+      "name": "r_lowarm_twist3_proc",
+      "parent_index": 40,
+      "parent_name": "r_lowarm",
+      "translation_offset": [
+        -16.199999,
+        -2e-06,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        -0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -12.869974,
+        79.646912,
+        -95.577843,
+        0.843368,
+        0.088001,
+        -0.369812,
+        0.379769,
+        1.0
+      ],
+      "rest_pose_state": [
+        -46.307728,
+        115.968002,
+        7.169922,
+        0.843368,
+        0.088001,
+        -0.369812,
+        -0.379769,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 68,
+      "name": "r_lowarm_twist4_proc",
+      "parent_index": 40,
+      "parent_name": "r_lowarm",
+      "translation_offset": [
+        -21.6,
+        3e-06,
+        -2e-06
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        -0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -7.469972,
+        79.646912,
+        -95.577843,
+        0.843368,
+        0.088001,
+        -0.369812,
+        0.379769,
+        1.0
+      ],
+      "rest_pose_state": [
+        -50.147068,
+        113.649666,
+        10.177377,
+        0.843368,
+        0.088001,
+        -0.369812,
+        -0.379769,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 69,
+      "name": "r_uparm_twist0_proc",
+      "parent_index": 39,
+      "parent_name": "r_uparm",
+      "translation_offset": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -93.409195,
+        50.188885,
+        -96.033195,
+        0.783293,
+        0.331535,
+        -0.234203,
+        0.470835,
+        1.0
+      ],
+      "rest_pose_state": [
+        -17.586102,
+        141.940002,
+        -3.215975,
+        0.783293,
+        0.331535,
+        -0.234203,
+        -0.470835,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 70,
+      "name": "r_uparm_twist1_proc",
+      "parent_index": 39,
+      "parent_name": "r_uparm",
+      "translation_offset": [
+        -6.420023,
+        0.011584,
+        -8.2e-05
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -86.989174,
+        50.177303,
+        -96.033112,
+        0.783293,
+        0.331535,
+        -0.234203,
+        0.470835,
+        1.0
+      ],
+      "rest_pose_state": [
+        -21.887001,
+        137.185745,
+        -2.875093,
+        0.783293,
+        0.331535,
+        -0.234203,
+        -0.470835,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 71,
+      "name": "r_uparm_twist2_proc",
+      "parent_index": 39,
+      "parent_name": "r_uparm",
+      "translation_offset": [
+        -12.840047,
+        0.023168,
+        -0.000164
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -80.569153,
+        50.165718,
+        -96.033028,
+        0.783293,
+        0.331535,
+        -0.234203,
+        0.470835,
+        1.0
+      ],
+      "rest_pose_state": [
+        -26.187902,
+        132.431503,
+        -2.53421,
+        0.783293,
+        0.331535,
+        -0.234203,
+        -0.470835,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 72,
+      "name": "r_uparm_twist3_proc",
+      "parent_index": 39,
+      "parent_name": "r_uparm",
+      "translation_offset": [
+        -19.260071,
+        0.034752,
+        -0.000247
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -74.149124,
+        50.154133,
+        -96.032944,
+        0.783293,
+        0.331535,
+        -0.234203,
+        0.470835,
+        1.0
+      ],
+      "rest_pose_state": [
+        -30.488802,
+        127.677246,
+        -2.193327,
+        0.783293,
+        0.331535,
+        -0.234203,
+        -0.470835,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 73,
+      "name": "r_uparm_twist4_proc",
+      "parent_index": 39,
+      "parent_name": "r_uparm",
+      "translation_offset": [
+        -25.680094,
+        0.046336,
+        -0.000329
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -67.729103,
+        50.142551,
+        -96.032867,
+        0.783293,
+        0.331535,
+        -0.234203,
+        0.470835,
+        1.0
+      ],
+      "rest_pose_state": [
+        -34.7897,
+        122.922997,
+        -1.852445,
+        0.783293,
+        0.331535,
+        -0.234203,
+        -0.470835,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 74,
+      "name": "l_clavicle",
+      "parent_index": 37,
+      "parent_name": "c_spine3",
+      "translation_offset": [
+        5.313289,
+        10.289214,
+        2.82178
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.222661,
+        -0.646909,
+        -0.177149,
+        0.707495
+      ],
+      "inverse_bind_pose": [
+        -9.9739,
+        -6.309535,
+        140.227173,
+        0.686769,
+        0.226771,
+        -0.174168,
+        -0.668273,
+        1.0
+      ],
+      "rest_pose_state": [
+        2.82178,
+        140.550995,
+        6.356183,
+        0.686769,
+        0.226771,
+        -0.174168,
+        0.668273,
+        1.0
+      ],
+      "children": [
+        "l_uparm"
+      ]
+    },
+    {
+      "index": 75,
+      "name": "l_uparm",
+      "parent_index": 74,
+      "parent_name": "l_clavicle",
+      "translation_offset": [
+        17.650517,
+        -0.0,
+        -0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.107322,
+        -0.479823,
+        0.182484,
+        0.851441
+      ],
+      "inverse_bind_pose": [
+        93.409195,
+        -50.188889,
+        96.033195,
+        -0.470835,
+        0.234203,
+        0.331535,
+        0.783293,
+        1.0
+      ],
+      "rest_pose_state": [
+        17.586102,
+        141.940002,
+        -3.215975,
+        0.470835,
+        -0.234203,
+        -0.331535,
+        0.783293,
+        1.0
+      ],
+      "children": [
+        "l_lowarm",
+        "l_uparm_twist0_proc",
+        "l_uparm_twist1_proc",
+        "l_uparm_twist2_proc",
+        "l_uparm_twist3_proc",
+        "l_uparm_twist4_proc"
+      ]
+    },
+    {
+      "index": 76,
+      "name": "l_lowarm",
+      "parent_index": 75,
+      "parent_name": "l_uparm",
+      "translation_offset": [
+        25.680094,
+        -0.046336,
+        0.000329
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.002379,
+        -0.007679,
+        0.295853,
+        0.9552
+      ],
+      "inverse_bind_pose": [
+        29.069973,
+        -79.646927,
+        95.577835,
+        -0.379769,
+        0.369812,
+        0.088001,
+        0.843368,
+        1.0
+      ],
+      "rest_pose_state": [
+        34.7897,
+        122.922997,
+        -1.852445,
+        0.379769,
+        -0.369812,
+        -0.088001,
+        0.843368,
+        1.0
+      ],
+      "children": [
+        "l_wrist_twist",
+        "l_lowarm_twist1_proc",
+        "l_lowarm_twist2_proc",
+        "l_lowarm_twist3_proc",
+        "l_lowarm_twist4_proc"
+      ]
+    },
+    {
+      "index": 77,
+      "name": "l_wrist_twist",
+      "parent_index": 76,
+      "parent_name": "l_lowarm",
+      "translation_offset": [
+        27.000002,
+        -2e-06,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.837665,
+        -0.031997,
+        0.036723,
+        0.544008
+      ],
+      "inverse_bind_pose": [
+        12.354939,
+        119.032387,
+        34.083496,
+        0.896661,
+        -0.315827,
+        0.280725,
+        -0.132078,
+        1.0
+      ],
+      "rest_pose_state": [
+        53.986416,
+        111.331337,
+        13.184833,
+        0.896661,
+        -0.315827,
+        0.280725,
+        0.132078,
+        1.0
+      ],
+      "children": [
+        "l_wrist"
+      ]
+    },
+    {
+      "index": 78,
+      "name": "l_wrist",
+      "parent_index": 77,
+      "parent_name": "l_wrist_twist",
+      "translation_offset": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        12.354939,
+        119.032387,
+        34.083496,
+        0.896661,
+        -0.315827,
+        0.280725,
+        -0.132078,
+        1.0
+      ],
+      "rest_pose_state": [
+        53.986416,
+        111.331337,
+        13.184833,
+        0.896661,
+        -0.315827,
+        0.280725,
+        0.132078,
+        1.0
+      ],
+      "children": [
+        "l_pinky0",
+        "l_ring1",
+        "l_middle1",
+        "l_index1",
+        "l_thumb0"
+      ]
+    },
+    {
+      "index": 79,
+      "name": "l_pinky0",
+      "parent_index": 78,
+      "parent_name": "l_wrist",
+      "translation_offset": [
+        2.040412,
+        1.070484,
+        2.263171
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.207036,
+        -0.140343,
+        0.018312,
+        0.968042
+      ],
+      "inverse_bind_pose": [
+        29.343227,
+        95.085518,
+        71.635559,
+        0.874275,
+        -0.39881,
+        0.082945,
+        -0.264034,
+        1.0
+      ],
+      "rest_pose_state": [
+        55.563038,
+        108.570053,
+        12.618498,
+        0.874275,
+        -0.39881,
+        0.082945,
+        0.264034,
+        1.0
+      ],
+      "children": [
+        "l_pinky1"
+      ]
+    },
+    {
+      "index": 80,
+      "name": "l_pinky1",
+      "parent_index": 79,
+      "parent_name": "l_pinky0",
+      "translation_offset": [
+        4.565054,
+        0.0001,
+        -0.000219
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.091113,
+        0.004071,
+        0.028129,
+        0.995435
+      ],
+      "inverse_bind_pose": [
+        29.92017,
+        104.997711,
+        53.545708,
+        0.882785,
+        -0.41295,
+        0.12989,
+        -0.182461,
+        1.0
+      ],
+      "rest_pose_state": [
+        58.613079,
+        105.586678,
+        14.242202,
+        0.882785,
+        -0.41295,
+        0.12989,
+        0.182461,
+        1.0
+      ],
+      "children": [
+        "l_pinky2"
+      ]
+    },
+    {
+      "index": 81,
+      "name": "l_pinky2",
+      "parent_index": 80,
+      "parent_name": "l_pinky1",
+      "translation_offset": [
+        3.072041,
+        0.0,
+        -0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.037617,
+        -0.042938,
+        -0.013286,
+        0.998281
+      ],
+      "inverse_bind_pose": [
+        28.937496,
+        101.502007,
+        58.927483,
+        0.885467,
+        -0.413232,
+        0.073804,
+        -0.199349,
+        1.0
+      ],
+      "rest_pose_state": [
+        60.533726,
+        103.492493,
+        15.40965,
+        0.885467,
+        -0.413232,
+        0.073804,
+        0.199349,
+        1.0
+      ],
+      "children": [
+        "l_pinky3"
+      ]
+    },
+    {
+      "index": 82,
+      "name": "l_pinky3",
+      "parent_index": 81,
+      "parent_name": "l_pinky2",
+      "translation_offset": [
+        2.031138,
+        0.0,
+        -0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.000645,
+        0.049171,
+        -0.024019,
+        0.998501
+      ],
+      "inverse_bind_pose": [
+        16.094885,
+        102.613785,
+        60.913254,
+        0.890565,
+        -0.381495,
+        0.11271,
+        -0.220571,
+        1.0
+      ],
+      "rest_pose_state": [
+        61.849064,
+        102.065857,
+        16.009762,
+        0.890565,
+        -0.381495,
+        0.11271,
+        0.220571,
+        1.0
+      ],
+      "children": [
+        "l_pinky_null"
+      ]
+    },
+    {
+      "index": 83,
+      "name": "l_pinky_null",
+      "parent_index": 82,
+      "parent_name": "l_pinky3",
+      "translation_offset": [
+        2.03967,
+        -0.0,
+        -0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        14.055214,
+        102.613785,
+        60.913254,
+        0.890565,
+        -0.381495,
+        0.11271,
+        -0.220571,
+        1.0
+      ],
+      "rest_pose_state": [
+        63.24321,
+        100.781334,
+        16.762493,
+        0.890565,
+        -0.381495,
+        0.11271,
+        0.220571,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 84,
+      "name": "l_ring1",
+      "parent_index": 78,
+      "parent_name": "l_wrist",
+      "translation_offset": [
+        7.502435,
+        0.781431,
+        1.709838
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.053159,
+        -0.123103,
+        0.049813,
+        0.989716
+      ],
+      "inverse_bind_pose": [
+        25.606064,
+        112.777237,
+        40.994064,
+        0.899245,
+        -0.388428,
+        0.157247,
+        -0.125523,
+        1.0
+      ],
+      "rest_pose_state": [
+        59.027279,
+        106.331993,
+        16.253542,
+        0.899245,
+        -0.388428,
+        0.157247,
+        0.125523,
+        1.0
+      ],
+      "children": [
+        "l_ring2"
+      ]
+    },
+    {
+      "index": 85,
+      "name": "l_ring2",
+      "parent_index": 84,
+      "parent_name": "l_ring1",
+      "translation_offset": [
+        3.89961,
+        0.0,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.033633,
+        -0.00279,
+        0.005676,
+        0.999414
+      ],
+      "inverse_bind_pose": [
+        23.218332,
+        109.515495,
+        48.349308,
+        0.892731,
+        -0.398943,
+        0.142294,
+        -0.153717,
+        1.0
+      ],
+      "rest_pose_state": [
+        61.557327,
+        103.761734,
+        17.736639,
+        0.892731,
+        -0.398943,
+        0.142294,
+        0.153717,
+        1.0
+      ],
+      "children": [
+        "l_ring3"
+      ]
+    },
+    {
+      "index": 86,
+      "name": "l_ring3",
+      "parent_index": 85,
+      "parent_name": "l_ring2",
+      "translation_offset": [
+        2.65734,
+        0.0,
+        -0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.003477,
+        0.029179,
+        -0.025029,
+        0.999255
+      ],
+      "inverse_bind_pose": [
+        12.18896,
+        109.993286,
+        50.069546,
+        0.897364,
+        -0.372312,
+        0.163003,
+        -0.171909,
+        1.0
+      ],
+      "rest_pose_state": [
+        63.261196,
+        101.985168,
+        18.737684,
+        0.897364,
+        -0.372311,
+        0.163003,
+        0.171909,
+        1.0
+      ],
+      "children": [
+        "l_ring_null"
+      ]
+    },
+    {
+      "index": 87,
+      "name": "l_ring_null",
+      "parent_index": 86,
+      "parent_name": "l_ring3",
+      "translation_offset": [
+        2.215608,
+        0.0,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        9.973352,
+        109.993286,
+        50.069546,
+        0.897364,
+        -0.372312,
+        0.163003,
+        -0.171909,
+        1.0
+      ],
+      "rest_pose_state": [
+        64.744827,
+        100.628876,
+        19.669466,
+        0.897364,
+        -0.372311,
+        0.163003,
+        0.171909,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 88,
+      "name": "l_middle1",
+      "parent_index": 78,
+      "parent_name": "l_wrist",
+      "translation_offset": [
+        8.197718,
+        0.382816,
+        -0.209277
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.009066,
+        -0.051466,
+        0.051836,
+        0.997287
+      ],
+      "inverse_bind_pose": [
+        19.978783,
+        116.76342,
+        35.187355,
+        0.891108,
+        -0.370792,
+        0.2378,
+        -0.109044,
+        1.0
+      ],
+      "rest_pose_state": [
+        58.923561,
+        107.089806,
+        18.187521,
+        0.891108,
+        -0.370792,
+        0.2378,
+        0.109044,
+        1.0
+      ],
+      "children": [
+        "l_middle2"
+      ]
+    },
+    {
+      "index": 89,
+      "name": "l_middle2",
+      "parent_index": 88,
+      "parent_name": "l_middle1",
+      "translation_offset": [
+        4.292699,
+        -0.0,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.011228,
+        -0.004379,
+        -0.001978,
+        0.999925
+      ],
+      "inverse_bind_pose": [
+        15.544599,
+        116.007149,
+        37.664387,
+        0.891592,
+        -0.372149,
+        0.229501,
+        -0.117888,
+        1.0
+      ],
+      "rest_pose_state": [
+        61.550388,
+        104.475677,
+        20.353943,
+        0.891592,
+        -0.372149,
+        0.229501,
+        0.117888,
+        1.0
+      ],
+      "children": [
+        "l_middle3"
+      ]
+    },
+    {
+      "index": 90,
+      "name": "l_middle3",
+      "parent_index": 89,
+      "parent_name": "l_middle2",
+      "translation_offset": [
+        2.754958,
+        0.0,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.03432,
+        -0.004612,
+        -0.093007,
+        0.995063
+      ],
+      "inverse_bind_pose": [
+        -8.281737,
+        113.558067,
+        45.561157,
+        0.918816,
+        -0.295808,
+        0.20052,
+        -0.167534,
+        1.0
+      ],
+      "rest_pose_state": [
+        63.252041,
+        102.796532,
+        21.723118,
+        0.918816,
+        -0.295808,
+        0.20052,
+        0.167534,
+        1.0
+      ],
+      "children": [
+        "l_middle_null"
+      ]
+    },
+    {
+      "index": 91,
+      "name": "l_middle_null",
+      "parent_index": 90,
+      "parent_name": "l_middle3",
+      "translation_offset": [
+        2.348831,
+        0.0,
+        -0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -10.630569,
+        113.558067,
+        45.561157,
+        0.918816,
+        -0.295808,
+        0.20052,
+        -0.167534,
+        1.0
+      ],
+      "rest_pose_state": [
+        65.000931,
+        101.677551,
+        22.821424,
+        0.918816,
+        -0.295808,
+        0.20052,
+        0.167534,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 92,
+      "name": "l_index1",
+      "parent_index": 78,
+      "parent_name": "l_wrist",
+      "translation_offset": [
+        8.23268,
+        0.860146,
+        -2.391755
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.030683,
+        -0.018856,
+        0.043281,
+        0.998414
+      ],
+      "inverse_bind_pose": [
+        15.650469,
+        119.32122,
+        28.803219,
+        0.890915,
+        -0.348012,
+        0.27878,
+        -0.086251,
+        1.0
+      ],
+      "rest_pose_state": [
+        57.723644,
+        107.611084,
+        19.998802,
+        0.890915,
+        -0.348012,
+        0.27878,
+        0.086251,
+        1.0
+      ],
+      "children": [
+        "l_index2"
+      ]
+    },
+    {
+      "index": 93,
+      "name": "l_index2",
+      "parent_index": 92,
+      "parent_name": "l_index1",
+      "translation_offset": [
+        3.79273,
+        0.0,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.025852,
+        -0.007116,
+        0.003293,
+        0.999635
+      ],
+      "inverse_bind_pose": [
+        13.09061,
+        117.59536,
+        34.752724,
+        0.889198,
+        -0.35864,
+        0.263626,
+        -0.105857,
+        1.0
+      ],
+      "rest_pose_state": [
+        60.008152,
+        105.441612,
+        22.110489,
+        0.889198,
+        -0.35864,
+        0.263626,
+        0.105857,
+        1.0
+      ],
+      "children": [
+        "l_index3"
+      ]
+    },
+    {
+      "index": 94,
+      "name": "l_index3",
+      "parent_index": 93,
+      "parent_name": "l_index2",
+      "translation_offset": [
+        2.430364,
+        -0.0,
+        -0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.016056,
+        -0.027149,
+        -0.072034,
+        0.996903
+      ],
+      "inverse_bind_pose": [
+        -4.291315,
+        116.87809,
+        38.355679,
+        0.917736,
+        -0.300583,
+        0.225285,
+        -0.12906,
+        1.0
+      ],
+      "rest_pose_state": [
+        61.475506,
+        104.027168,
+        23.434454,
+        0.917736,
+        -0.300583,
+        0.225285,
+        0.12906,
+        1.0
+      ],
+      "children": [
+        "l_index_null"
+      ]
+    },
+    {
+      "index": 95,
+      "name": "l_index_null",
+      "parent_index": 94,
+      "parent_name": "l_index3",
+      "translation_offset": [
+        2.122577,
+        -0.0,
+        -0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -6.413892,
+        116.87809,
+        38.355679,
+        0.917736,
+        -0.300583,
+        0.225285,
+        -0.12906,
+        1.0
+      ],
+      "rest_pose_state": [
+        62.999077,
+        102.979546,
+        24.476833,
+        0.917736,
+        -0.300583,
+        0.225285,
+        0.12906,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 96,
+      "name": "l_thumb0",
+      "parent_index": 78,
+      "parent_name": "l_wrist",
+      "translation_offset": [
+        0.639986,
+        1.28391,
+        -1.086339
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.375387,
+        0.424584,
+        -0.007779,
+        0.823864
+      ],
+      "inverse_bind_pose": [
+        18.704639,
+        109.95507,
+        -52.904446,
+        0.671573,
+        -0.091765,
+        0.729518,
+        0.091501,
+        1.0
+      ],
+      "rest_pose_state": [
+        53.119202,
+        110.483276,
+        14.514071,
+        0.671573,
+        -0.091765,
+        0.729518,
+        -0.091501,
+        1.0
+      ],
+      "children": [
+        "l_thumb1"
+      ]
+    },
+    {
+      "index": 97,
+      "name": "l_thumb1",
+      "parent_index": 96,
+      "parent_name": "l_thumb0",
+      "translation_offset": [
+        2.485256,
+        -0.0,
+        -0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.26023,
+        0.024331,
+        0.125678,
+        0.957023
+      ],
+      "inverse_bind_pose": [
+        42.533569,
+        61.218227,
+        -97.955559,
+        0.589617,
+        0.015393,
+        0.726886,
+        0.351784,
+        1.0
+      ],
+      "rest_pose_state": [
+        52.917313,
+        109.845169,
+        16.907511,
+        0.589617,
+        0.015393,
+        0.726886,
+        -0.351784,
+        1.0
+      ],
+      "children": [
+        "l_thumb2"
+      ]
+    },
+    {
+      "index": 98,
+      "name": "l_thumb2",
+      "parent_index": 97,
+      "parent_name": "l_thumb1",
+      "translation_offset": [
+        3.251291,
+        0.0,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.082704,
+        -0.076962,
+        -0.084062,
+        0.990036
+      ],
+      "inverse_bind_pose": [
+        12.561911,
+        81.327805,
+        -90.078003,
+        0.667484,
+        0.031762,
+        0.70511,
+        0.237227,
+        1.0
+      ],
+      "rest_pose_state": [
+        52.731339,
+        108.241432,
+        19.729626,
+        0.667484,
+        0.031762,
+        0.70511,
+        -0.237227,
+        1.0
+      ],
+      "children": [
+        "l_thumb3"
+      ]
+    },
+    {
+      "index": 99,
+      "name": "l_thumb3",
+      "parent_index": 98,
+      "parent_name": "l_thumb2",
+      "translation_offset": [
+        3.379309,
+        -0.0,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.083506,
+        0.065016,
+        -0.058274,
+        0.992675
+      ],
+      "inverse_bind_pose": [
+        13.020367,
+        66.551994,
+        -101.063744,
+        0.595091,
+        0.113884,
+        0.754514,
+        0.252204,
+        1.0
+      ],
+      "rest_pose_state": [
+        52.743584,
+        107.254196,
+        22.961491,
+        0.595091,
+        0.113884,
+        0.754514,
+        -0.252204,
+        1.0
+      ],
+      "children": [
+        "l_thumb_null"
+      ]
+    },
+    {
+      "index": 100,
+      "name": "l_thumb_null",
+      "parent_index": 99,
+      "parent_name": "l_thumb3",
+      "translation_offset": [
+        2.546025,
+        0.0,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        10.474341,
+        66.551994,
+        -101.063744,
+        0.595091,
+        0.113884,
+        0.754514,
+        0.252204,
+        1.0
+      ],
+      "rest_pose_state": [
+        52.324711,
+        106.630318,
+        25.394096,
+        0.595091,
+        0.113884,
+        0.754514,
+        -0.252204,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 101,
+      "name": "l_lowarm_twist1_proc",
+      "parent_index": 76,
+      "parent_name": "l_lowarm",
+      "translation_offset": [
+        5.400001,
+        -1e-06,
+        1e-06
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        -0.0,
+        -0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        23.669971,
+        -79.646912,
+        95.577843,
+        -0.379769,
+        0.369812,
+        0.088001,
+        0.843368,
+        1.0
+      ],
+      "rest_pose_state": [
+        38.629044,
+        120.604668,
+        1.155011,
+        0.379769,
+        -0.369812,
+        -0.088001,
+        0.843368,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 102,
+      "name": "l_lowarm_twist2_proc",
+      "parent_index": 76,
+      "parent_name": "l_lowarm",
+      "translation_offset": [
+        10.800001,
+        -0.0,
+        -1e-06
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        -0.0,
+        -0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        18.269972,
+        -79.646912,
+        95.577843,
+        -0.379769,
+        0.369812,
+        0.088001,
+        0.843368,
+        1.0
+      ],
+      "rest_pose_state": [
+        42.468388,
+        118.286331,
+        4.162466,
+        0.379769,
+        -0.369812,
+        -0.088001,
+        0.843368,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 103,
+      "name": "l_lowarm_twist3_proc",
+      "parent_index": 76,
+      "parent_name": "l_lowarm",
+      "translation_offset": [
+        16.199999,
+        1e-06,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        -0.0,
+        -0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        12.869974,
+        -79.646912,
+        95.577843,
+        -0.379769,
+        0.369812,
+        0.088001,
+        0.843368,
+        1.0
+      ],
+      "rest_pose_state": [
+        46.307728,
+        115.968002,
+        7.169922,
+        0.379769,
+        -0.369812,
+        -0.088001,
+        0.843368,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 104,
+      "name": "l_lowarm_twist4_proc",
+      "parent_index": 76,
+      "parent_name": "l_lowarm",
+      "translation_offset": [
+        21.599998,
+        2e-06,
+        -2e-06
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        -0.0,
+        -0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        7.469974,
+        -79.646912,
+        95.577843,
+        -0.379769,
+        0.369812,
+        0.088001,
+        0.843368,
+        1.0
+      ],
+      "rest_pose_state": [
+        50.147072,
+        113.649673,
+        10.177378,
+        0.379769,
+        -0.369812,
+        -0.088001,
+        0.843368,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 105,
+      "name": "l_uparm_twist0_proc",
+      "parent_index": 75,
+      "parent_name": "l_uparm",
+      "translation_offset": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        93.409195,
+        -50.188885,
+        96.033195,
+        -0.470835,
+        0.234203,
+        0.331535,
+        0.783293,
+        1.0
+      ],
+      "rest_pose_state": [
+        17.586102,
+        141.940002,
+        -3.215975,
+        0.470835,
+        -0.234203,
+        -0.331535,
+        0.783293,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 106,
+      "name": "l_uparm_twist1_proc",
+      "parent_index": 75,
+      "parent_name": "l_uparm",
+      "translation_offset": [
+        6.420023,
+        -0.011584,
+        8.2e-05
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        86.989174,
+        -50.177303,
+        96.033112,
+        -0.470835,
+        0.234203,
+        0.331535,
+        0.783293,
+        1.0
+      ],
+      "rest_pose_state": [
+        21.887001,
+        137.185745,
+        -2.875093,
+        0.470835,
+        -0.234203,
+        -0.331535,
+        0.783293,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 107,
+      "name": "l_uparm_twist2_proc",
+      "parent_index": 75,
+      "parent_name": "l_uparm",
+      "translation_offset": [
+        12.840047,
+        -0.023168,
+        0.000164
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        80.569153,
+        -50.165718,
+        96.033028,
+        -0.470835,
+        0.234203,
+        0.331535,
+        0.783293,
+        1.0
+      ],
+      "rest_pose_state": [
+        26.187902,
+        132.431503,
+        -2.53421,
+        0.470835,
+        -0.234203,
+        -0.331535,
+        0.783293,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 108,
+      "name": "l_uparm_twist3_proc",
+      "parent_index": 75,
+      "parent_name": "l_uparm",
+      "translation_offset": [
+        19.260071,
+        -0.034752,
+        0.000247
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        74.149124,
+        -50.154133,
+        96.032951,
+        -0.470835,
+        0.234203,
+        0.331535,
+        0.783293,
+        1.0
+      ],
+      "rest_pose_state": [
+        30.488802,
+        127.677246,
+        -2.193327,
+        0.470835,
+        -0.234203,
+        -0.331535,
+        0.783293,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 109,
+      "name": "l_uparm_twist4_proc",
+      "parent_index": 75,
+      "parent_name": "l_uparm",
+      "translation_offset": [
+        25.680094,
+        -0.046336,
+        0.000329
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        67.729103,
+        -50.142551,
+        96.032867,
+        -0.470835,
+        0.234203,
+        0.331535,
+        0.783293,
+        1.0
+      ],
+      "rest_pose_state": [
+        34.7897,
+        122.922997,
+        -1.852445,
+        0.470835,
+        -0.234203,
+        -0.331535,
+        0.783293,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 110,
+      "name": "c_neck",
+      "parent_index": 37,
+      "parent_name": "c_spine3",
+      "translation_offset": [
+        9.176672,
+        4.76546,
+        -0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.165373,
+        0.986231
+      ],
+      "inverse_bind_pose": [
+        -138.26799,
+        40.908413,
+        0.0,
+        0.567504,
+        0.421828,
+        0.567504,
+        -0.421828,
+        1.0
+      ],
+      "rest_pose_state": [
+        0.0,
+        144.191086,
+        0.682787,
+        0.567504,
+        0.421828,
+        0.567504,
+        0.421828,
+        1.0
+      ],
+      "children": [
+        "c_neck_twist1_proc",
+        "c_neck_twist0_proc",
+        "c_head"
+      ]
+    },
+    {
+      "index": 111,
+      "name": "c_neck_twist1_proc",
+      "parent_index": 110,
+      "parent_name": "c_neck",
+      "translation_offset": [
+        4.964629,
+        -0.0,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -143.232605,
+        40.908413,
+        0.0,
+        0.567504,
+        0.421828,
+        0.567504,
+        -0.421828,
+        1.0
+      ],
+      "rest_pose_state": [
+        -0.0,
+        148.944992,
+        2.113812,
+        0.567504,
+        0.421828,
+        0.567504,
+        0.421828,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 112,
+      "name": "c_neck_twist0_proc",
+      "parent_index": 110,
+      "parent_name": "c_neck",
+      "translation_offset": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -138.26799,
+        40.908413,
+        0.0,
+        0.567504,
+        0.421828,
+        0.567504,
+        -0.421828,
+        1.0
+      ],
+      "rest_pose_state": [
+        0.0,
+        144.191086,
+        0.682787,
+        0.567504,
+        0.421828,
+        0.567504,
+        0.421828,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 113,
+      "name": "c_head",
+      "parent_index": 110,
+      "parent_name": "c_neck",
+      "translation_offset": [
+        9.929257,
+        -0.0,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.0,
+        -0.0,
+        -0.145676,
+        0.989332
+      ],
+      "inverse_bind_pose": [
+        -153.698914,
+        -3.544828,
+        0.0,
+        -0.5,
+        -0.5,
+        -0.5,
+        0.5,
+        1.0
+      ],
+      "rest_pose_state": [
+        0.0,
+        153.698914,
+        3.544837,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        1.0
+      ],
+      "children": [
+        "c_jaw",
+        "r_eye",
+        "l_eye",
+        "c_head_null"
+      ]
+    },
+    {
+      "index": 114,
+      "name": "c_jaw",
+      "parent_index": 113,
+      "parent_name": "c_head",
+      "translation_offset": [
+        1.799428,
+        1.88935,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.5,
+        -0.5,
+        -0.5,
+        0.5
+      ],
+      "inverse_bind_pose": [
+        -0.0,
+        -155.498337,
+        -5.434178,
+        -0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "rest_pose_state": [
+        0.0,
+        155.498337,
+        5.434187,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "children": [
+        "c_teeth",
+        "c_jaw_null",
+        "c_tongue0"
+      ]
+    },
+    {
+      "index": 115,
+      "name": "c_teeth",
+      "parent_index": 114,
+      "parent_name": "c_jaw",
+      "translation_offset": [
+        -0.0,
+        -0.897312,
+        2.37499
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        0.0,
+        -154.601028,
+        -7.809168,
+        -0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "rest_pose_state": [
+        -0.0,
+        154.601028,
+        7.809177,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 116,
+      "name": "c_jaw_null",
+      "parent_index": 114,
+      "parent_name": "c_jaw",
+      "translation_offset": [
+        0.0,
+        -4.29707,
+        7.879549
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -0.0,
+        -151.201263,
+        -13.313727,
+        -0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "rest_pose_state": [
+        0.0,
+        151.201263,
+        13.313736,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 117,
+      "name": "c_tongue0",
+      "parent_index": 114,
+      "parent_name": "c_jaw",
+      "translation_offset": [
+        -0.0,
+        -0.897308,
+        0.046828
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.161178,
+        -0.688492,
+        0.161178,
+        0.688492
+      ],
+      "inverse_bind_pose": [
+        -73.535789,
+        -136.102936,
+        2e-06,
+        0.161178,
+        0.688492,
+        -0.161178,
+        0.688492,
+        1.0
+      ],
+      "rest_pose_state": [
+        -0.0,
+        154.601028,
+        5.481016,
+        -0.161178,
+        -0.688492,
+        0.161178,
+        0.688492,
+        1.0
+      ],
+      "children": [
+        "c_tongue1"
+      ]
+    },
+    {
+      "index": 118,
+      "name": "c_tongue1",
+      "parent_index": 117,
+      "parent_name": "c_tongue0",
+      "translation_offset": [
+        1.097839,
+        -0.0,
+        0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.0,
+        -0.0,
+        -0.049568,
+        0.998771
+      ],
+      "inverse_bind_pose": [
+        -60.790768,
+        -142.823914,
+        2e-06,
+        0.126853,
+        0.695635,
+        -0.126853,
+        0.695635,
+        1.0
+      ],
+      "rest_pose_state": [
+        -0.0,
+        155.088333,
+        6.464774,
+        -0.126853,
+        -0.695635,
+        0.126853,
+        0.695635,
+        1.0
+      ],
+      "children": [
+        "c_tongue2"
+      ]
+    },
+    {
+      "index": 119,
+      "name": "c_tongue2",
+      "parent_index": 118,
+      "parent_name": "c_tongue1",
+      "translation_offset": [
+        2.168081,
+        0.0,
+        -0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.0,
+        0.0,
+        -0.24463,
+        0.969617
+      ],
+      "inverse_bind_pose": [
+        12.331376,
+        -155.596985,
+        2e-06,
+        -0.047174,
+        0.705531,
+        0.047174,
+        0.705531,
+        1.0
+      ],
+      "rest_pose_state": [
+        -0.0,
+        155.853607,
+        8.493302,
+        0.047174,
+        -0.705531,
+        -0.047174,
+        0.705531,
+        1.0
+      ],
+      "children": [
+        "c_tongue3"
+      ]
+    },
+    {
+      "index": 120,
+      "name": "c_tongue3",
+      "parent_index": 119,
+      "parent_name": "c_tongue2",
+      "translation_offset": [
+        1.840074,
+        0.0,
+        -0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        -0.141352,
+        0.989959
+      ],
+      "inverse_bind_pose": [
+        53.618225,
+        -146.443085,
+        2e-06,
+        -0.146429,
+        0.691779,
+        0.146429,
+        0.691779,
+        1.0
+      ],
+      "rest_pose_state": [
+        -0.0,
+        155.608643,
+        10.316997,
+        0.146429,
+        -0.691779,
+        -0.146429,
+        0.691779,
+        1.0
+      ],
+      "children": [
+        "c_tongue4"
+      ]
+    },
+    {
+      "index": 121,
+      "name": "c_tongue4",
+      "parent_index": 120,
+      "parent_name": "c_tongue3",
+      "translation_offset": [
+        1.078928,
+        0.0,
+        -0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        52.539295,
+        -146.443085,
+        2e-06,
+        -0.146429,
+        0.691779,
+        0.146429,
+        0.691779,
+        1.0
+      ],
+      "rest_pose_state": [
+        -0.0,
+        155.171478,
+        11.30339,
+        0.146429,
+        -0.691779,
+        -0.146429,
+        0.691779,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 122,
+      "name": "r_eye",
+      "parent_index": 113,
+      "parent_name": "c_head",
+      "translation_offset": [
+        8.833091,
+        6.987814,
+        -3.207805
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.523621,
+        0.523621,
+        0.475207,
+        -0.475207
+      ],
+      "inverse_bind_pose": [
+        2.174115,
+        -162.531998,
+        -10.793507,
+        -0.0,
+        0.048414,
+        0.0,
+        0.998827,
+        1.0
+      ],
+      "rest_pose_state": [
+        -3.207805,
+        162.531998,
+        10.532651,
+        -0.0,
+        0.048414,
+        0.0,
+        -0.998827,
+        1.0
+      ],
+      "children": [
+        "r_eye_null"
+      ]
+    },
+    {
+      "index": 123,
+      "name": "r_eye_null",
+      "parent_index": 122,
+      "parent_name": "r_eye",
+      "translation_offset": [
+        0.000124,
+        0.0,
+        1.696502
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        2.173991,
+        -162.531998,
+        -12.490008,
+        -0.0,
+        0.048414,
+        0.0,
+        0.998827,
+        1.0
+      ],
+      "rest_pose_state": [
+        -3.371758,
+        162.531998,
+        12.221212,
+        -0.0,
+        0.048414,
+        0.0,
+        -0.998827,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 124,
+      "name": "l_eye",
+      "parent_index": 113,
+      "parent_name": "c_head",
+      "translation_offset": [
+        8.833091,
+        6.988167,
+        3.208
+      ],
+      "prerotation_quaternion_xyzw": [
+        -0.475207,
+        -0.475207,
+        -0.523621,
+        0.523621
+      ],
+      "inverse_bind_pose": [
+        -2.174275,
+        -162.531998,
+        -10.793877,
+        -0.0,
+        -0.048414,
+        -0.0,
+        0.998827,
+        1.0
+      ],
+      "rest_pose_state": [
+        3.208,
+        162.531998,
+        10.533004,
+        0.0,
+        0.048414,
+        0.0,
+        0.998827,
+        1.0
+      ],
+      "children": [
+        "l_eye_null"
+      ]
+    },
+    {
+      "index": 125,
+      "name": "l_eye_null",
+      "parent_index": 124,
+      "parent_name": "l_eye",
+      "translation_offset": [
+        0.000132,
+        0.0,
+        1.696582
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -2.174407,
+        -162.531998,
+        -12.490458,
+        -0.0,
+        -0.048414,
+        -0.0,
+        0.998827,
+        1.0
+      ],
+      "rest_pose_state": [
+        3.372214,
+        162.531998,
+        12.22162,
+        0.0,
+        0.048414,
+        0.0,
+        0.998827,
+        1.0
+      ],
+      "children": []
+    },
+    {
+      "index": 126,
+      "name": "c_head_null",
+      "parent_index": 113,
+      "parent_name": "c_head",
+      "translation_offset": [
+        19.076296,
+        -0.0,
+        -0.0
+      ],
+      "prerotation_quaternion_xyzw": [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "inverse_bind_pose": [
+        -172.775208,
+        -3.544828,
+        0.0,
+        -0.5,
+        -0.5,
+        -0.5,
+        0.5,
+        1.0
+      ],
+      "rest_pose_state": [
+        0.0,
+        172.775208,
+        3.544838,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        1.0
+      ],
+      "children": []
+    }
+  ]
+}

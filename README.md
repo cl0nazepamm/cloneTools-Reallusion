@@ -71,6 +71,40 @@ Both register their UI under the **Plugins** menu in iClone.
 
 ---
 
+### PoseSync
+
+Image-to-pose pipeline for iClone. Take a photo of a person, get a BVH pose applied to your character.
+
+Uses [SAM-3D Body](https://github.com/viridityzhu/SAM-3D-Body) for 3D human mesh recovery from a single image, then converts the result to a BVH skeleton pose compatible with iClone's CC4 rig.
+
+**How it works**: iClone plugin sends an image to a local Flask server → server runs SAM-3D Body inference → extracts joint rotations → writes a BVH file → iClone loads the BVH as a pose.
+
+**Requirements:**
+- NVIDIA GPU with CUDA support
+- Python 3.10+
+- PyTorch with CUDA (see [pytorch.org](https://pytorch.org/get-started/locally/))
+
+**Server setup:**
+1. Install PyTorch with CUDA:
+   ```
+   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+   ```
+2. Install dependencies:
+   ```
+   pip install -r PoseSync/server/requirements.txt
+   ```
+3. Download the SAM-3D Body checkpoint and place it in `PoseSync/server/checkpoints/`. See `PoseSync/server/sam-3d-body/INSTALL.md` for details.
+4. Start the server:
+   ```
+   python PoseSync/server/pose_server.py
+   ```
+
+**iClone plugin:**
+
+Load via **Menu > Script > Load Python** → `PoseSync/PoseSync.py`. Registers under the **Plugins** menu.
+
+---
+
 ## License
 
 MIT License

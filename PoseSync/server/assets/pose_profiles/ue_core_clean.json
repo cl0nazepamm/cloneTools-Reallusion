@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0.0",
+  "profile_name": "ue_core_clean",
+  "profile_version": "1.0.0",
+  "description": "UE/CC core chain mapping with source-name fallbacks and clean transform settings.",
+  "rotation_space": "local_parent",
+  "output_coordinate_system": {
+    "up": "Z",
+    "forward": "X",
+    "handedness": "left",
+    "units": "centimeters"
+  },
+  "passthrough_source_joints": false,
+  "global_transform": {
+    "translation_scale": 100.0,
+    "translation_offset": [0.0, 0.0, 0.0],
+    "rotation_offset_deg": [0.0, 0.0, 0.0],
+    "rotation_offset_mode": "post"
+  },
+  "bones": [
+    { "target": "pelvis", "parent": null, "sources": ["root"], "copy_translation": true, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "spine_01", "parent": "pelvis", "sources": ["c_spine0"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "spine_02", "parent": "spine_01", "sources": ["c_spine1"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "spine_03", "parent": "spine_02", "sources": ["c_spine2"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "spine_04", "parent": "spine_03", "sources": ["c_spine3"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "neck_01", "parent": "spine_04", "sources": ["c_neck", "neck"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "head", "parent": "neck_01", "sources": ["c_head", "head"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+
+    { "target": "clavicle_l", "parent": "spine_04", "sources": ["l_clavicle"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "upperarm_l", "parent": "clavicle_l", "sources": ["l_uparm"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "lowerarm_l", "parent": "upperarm_l", "sources": ["l_lowarm"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "hand_l", "parent": "lowerarm_l", "sources": ["l_wrist"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+
+    { "target": "clavicle_r", "parent": "spine_04", "sources": ["r_clavicle"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "upperarm_r", "parent": "clavicle_r", "sources": ["r_uparm"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "lowerarm_r", "parent": "upperarm_r", "sources": ["r_lowarm"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "hand_r", "parent": "lowerarm_r", "sources": ["r_wrist"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+
+    { "target": "thigh_l", "parent": "pelvis", "sources": ["l_upleg"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "calf_l", "parent": "thigh_l", "sources": ["l_lowleg"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "foot_l", "parent": "calf_l", "sources": ["l_foot"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "ball_l", "parent": "foot_l", "sources": ["l_ball"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+
+    { "target": "thigh_r", "parent": "pelvis", "sources": ["r_upleg"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "calf_r", "parent": "thigh_r", "sources": ["r_lowleg"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "foot_r", "parent": "calf_r", "sources": ["r_foot"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "ball_r", "parent": "foot_r", "sources": ["r_ball"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "profile_name": "max_biped_basic",
+  "profile_version": "1.0.0",
+  "description": "3ds Max Biped-style target names. Use as a clean starting profile and tune offsets per project.",
+  "rotation_space": "local_parent",
+  "output_coordinate_system": {
+    "up": "Z",
+    "forward": "Y",
+    "handedness": "right",
+    "units": "centimeters"
+  },
+  "passthrough_source_joints": false,
+  "global_transform": {
+    "translation_scale": 100.0,
+    "translation_offset": [0.0, 0.0, 0.0],
+    "rotation_offset_deg": [0.0, 0.0, 0.0],
+    "rotation_offset_mode": "post"
+  },
+  "bones": [
+    { "target": "Bip001 Pelvis", "parent": null, "sources": ["root"], "copy_translation": true, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "Bip001 Spine", "parent": "Bip001 Pelvis", "sources": ["c_spine0"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "Bip001 Spine1", "parent": "Bip001 Spine", "sources": ["c_spine1"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "Bip001 Spine2", "parent": "Bip001 Spine1", "sources": ["c_spine2"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "Bip001 Neck", "parent": "Bip001 Spine2", "sources": ["c_neck", "neck"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "Bip001 Head", "parent": "Bip001 Neck", "sources": ["c_head", "head"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+
+    { "target": "Bip001 L Clavicle", "parent": "Bip001 Spine2", "sources": ["l_clavicle"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "Bip001 L UpperArm", "parent": "Bip001 L Clavicle", "sources": ["l_uparm"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "Bip001 L Forearm", "parent": "Bip001 L UpperArm", "sources": ["l_lowarm"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "Bip001 L Hand", "parent": "Bip001 L Forearm", "sources": ["l_wrist"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+
+    { "target": "Bip001 R Clavicle", "parent": "Bip001 Spine2", "sources": ["r_clavicle"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "Bip001 R UpperArm", "parent": "Bip001 R Clavicle", "sources": ["r_uparm"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "Bip001 R Forearm", "parent": "Bip001 R UpperArm", "sources": ["r_lowarm"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "Bip001 R Hand", "parent": "Bip001 R Forearm", "sources": ["r_wrist"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+
+    { "target": "Bip001 L Thigh", "parent": "Bip001 Pelvis", "sources": ["l_upleg"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "Bip001 L Calf", "parent": "Bip001 L Thigh", "sources": ["l_lowleg"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "Bip001 L Foot", "parent": "Bip001 L Calf", "sources": ["l_foot"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "Bip001 L Toe0", "parent": "Bip001 L Foot", "sources": ["l_ball"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+
+    { "target": "Bip001 R Thigh", "parent": "Bip001 Pelvis", "sources": ["r_upleg"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "Bip001 R Calf", "parent": "Bip001 R Thigh", "sources": ["r_lowleg"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "Bip001 R Foot", "parent": "Bip001 R Calf", "sources": ["r_foot"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true },
+    { "target": "Bip001 R Toe0", "parent": "Bip001 R Foot", "sources": ["r_ball"], "copy_translation": false, "rotation_offset_deg": [0.0, 0.0, 0.0], "rotation_offset_mode": "post", "translation_offset": [0.0, 0.0, 0.0], "enabled": true }
+  ]
+}

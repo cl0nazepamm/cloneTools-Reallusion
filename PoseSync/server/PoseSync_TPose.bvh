@@ -1,0 +1,198 @@
+HIERARCHY
+ROOT RL_BoneRoot
+{
+    OFFSET 0.000000 0.000000 0.000000
+    CHANNELS 6 Xposition Yposition Zposition Zrotation Yrotation Xrotation
+    JOINT Bip001
+    {
+        OFFSET 0.000000 0.000000 92.311424
+        CHANNELS 3 Zrotation Yrotation Xrotation
+        JOINT Bip001_Footsteps
+        {
+            OFFSET 0.000000 0.000000 -90.112160
+            CHANNELS 3 Zrotation Yrotation Xrotation
+            End Site
+            {
+                OFFSET 0.000000 0.000000 0.000000
+            }
+        }
+        JOINT Bip001_Pelvis
+        {
+            OFFSET 0.000000 0.000000 0.000015
+            CHANNELS 3 Zrotation Yrotation Xrotation
+            JOINT Bip001_Spine
+            {
+                OFFSET 8.195975 -0.000012 -0.000000
+                CHANNELS 3 Zrotation Yrotation Xrotation
+                JOINT Bip001_Spine1
+                {
+                    OFFSET 10.700626 -0.011928 -0.000001
+                    CHANNELS 3 Zrotation Yrotation Xrotation
+                    JOINT Bip001_Spine2
+                    {
+                        OFFSET 14.975966 -0.017590 -0.000001
+                        CHANNELS 3 Zrotation Yrotation Xrotation
+                        JOINT Bip001_Neck
+                        {
+                            OFFSET 25.944435 -0.448522 -0.000002
+                            CHANNELS 3 Zrotation Yrotation Xrotation
+                            JOINT Bip001_L_Clavicle
+                            {
+                                OFFSET -3.097770 -0.491133 3.191209
+                                CHANNELS 3 Zrotation Yrotation Xrotation
+                                JOINT Bip001_L_UpperArm
+                                {
+                                    OFFSET 15.711581 0.000008 0.000039
+                                    CHANNELS 3 Zrotation Yrotation Xrotation
+                                    JOINT Bip001_L_Forearm
+                                    {
+                                        OFFSET 30.702507 -0.000014 -0.000012
+                                        CHANNELS 3 Zrotation Yrotation Xrotation
+                                        JOINT Bip001_L_Hand
+                                        {
+                                            OFFSET 26.360338 0.000008 -0.000009
+                                            CHANNELS 3 Zrotation Yrotation Xrotation
+                                            JOINT Bip001_L_Finger0
+                                            {
+                                                OFFSET 7.469016 0.000099 -0.000002
+                                                CHANNELS 3 Zrotation Yrotation Xrotation
+                                                JOINT Bip001_L_Finger0Nub
+                                                {
+                                                    OFFSET 2.597046 0.000004 -0.000002
+                                                    CHANNELS 3 Zrotation Yrotation Xrotation
+                                                    End Site
+                                                    {
+                                                        OFFSET 0.000000 0.000000 0.000000
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            JOINT Bip001_R_Clavicle
+                            {
+                                OFFSET -3.097764 -0.491112 -3.191211
+                                CHANNELS 3 Zrotation Yrotation Xrotation
+                                JOINT Bip001_R_UpperArm
+                                {
+                                    OFFSET 15.711585 0.000001 0.000022
+                                    CHANNELS 3 Zrotation Yrotation Xrotation
+                                    JOINT Bip001_R_Forearm
+                                    {
+                                        OFFSET 30.702503 -0.000007 0.000080
+                                        CHANNELS 3 Zrotation Yrotation Xrotation
+                                        JOINT Bip001_R_Hand
+                                        {
+                                            OFFSET 26.360346 -0.000001 -0.000076
+                                            CHANNELS 3 Zrotation Yrotation Xrotation
+                                            JOINT Bip001_R_Finger0
+                                            {
+                                                OFFSET 7.469033 0.000118 0.000006
+                                                CHANNELS 3 Zrotation Yrotation Xrotation
+                                                JOINT Bip001_R_Finger0Nub
+                                                {
+                                                    OFFSET 2.597007 0.000031 0.000005
+                                                    CHANNELS 3 Zrotation Yrotation Xrotation
+                                                    End Site
+                                                    {
+                                                        OFFSET 0.000000 0.000000 0.000000
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            JOINT Bip001_Head
+                            {
+                                OFFSET 8.777785 0.000001 -0.000001
+                                CHANNELS 3 Zrotation Yrotation Xrotation
+                                JOINT Bip001_HeadNub
+                                {
+                                    OFFSET 19.529509 0.000003 -0.000002
+                                    CHANNELS 3 Zrotation Yrotation Xrotation
+                                    End Site
+                                    {
+                                        OFFSET 0.000000 0.000000 0.000000
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                JOINT Bip001_L_Thigh
+                {
+                    OFFSET -8.164744 0.014999 8.310455
+                    CHANNELS 3 Zrotation Yrotation Xrotation
+                    JOINT Bip001_L_Calf
+                    {
+                        OFFSET 41.552391 0.000003 -0.000010
+                        CHANNELS 3 Zrotation Yrotation Xrotation
+                        JOINT Bip001_L_Foot
+                        {
+                            OFFSET 44.419514 0.000003 -0.000003
+                            CHANNELS 3 Zrotation Yrotation Xrotation
+                            JOINT Bip001_L_Toe0
+                            {
+                                OFFSET 4.176159 6.736474 -0.000004
+                                CHANNELS 3 Zrotation Yrotation Xrotation
+                                JOINT Bip001_L_Toe0Nub
+                                {
+                                    OFFSET 6.638558 -0.000002 0.000003
+                                    CHANNELS 3 Zrotation Yrotation Xrotation
+                                    End Site
+                                    {
+                                        OFFSET 0.000000 0.000000 0.000000
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                JOINT Bip001_R_Thigh
+                {
+                    OFFSET -8.164715 0.015047 -8.310453
+                    CHANNELS 3 Zrotation Yrotation Xrotation
+                    JOINT Bip001_R_Calf
+                    {
+                        OFFSET 41.552444 0.000003 0.000000
+                        CHANNELS 3 Zrotation Yrotation Xrotation
+                        JOINT Bip001_R_Foot
+                        {
+                            OFFSET 44.419518 0.000002 -0.000006
+                            CHANNELS 3 Zrotation Yrotation Xrotation
+                            JOINT Bip001_R_Toe0
+                            {
+                                OFFSET 4.176145 6.736477 -0.000005
+                                CHANNELS 3 Zrotation Yrotation Xrotation
+                                JOINT Bip001_R_Toe0Nub
+                                {
+                                    OFFSET 6.638562 -0.000001 0.000002
+                                    CHANNELS 3 Zrotation Yrotation Xrotation
+                                    End Site
+                                    {
+                                        OFFSET 0.000000 0.000000 0.000000
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    JOINT SkeletalMeshComponent0
+    {
+        OFFSET 0.000000 0.000000 0.000000
+        CHANNELS 3 Zrotation Yrotation Xrotation
+        End Site
+        {
+            OFFSET 0.000000 0.000000 0.000000
+        }
+    }
+}
+MOTION
+Frames: 1
+Frame Time: 0.016667
+0.000000 0.000000 0.000000 0.000000 0.000000 -89.999977 0.000000 -0.000000 0.000000 0.000000 -0.000000 0.000000 0.000000 -90.000000 180.000153 0.045621 -0.000085 -0.000243 0.000000 -0.000000 0.000000 -8.935308 0.000037 -0.000003 4.699993 -0.000029 -0.000010 171.385239 -76.918205 3.971890 1.149326 -13.324957 14.404101 -1.077927 0.000000 0.000000 1.368425 3.551110 -89.954376 0.000000 0.000000 -0.045627 0.000000 -0.000000 0.000000 171.383820 76.918114 -3.973340 1.149322 13.324986 -14.404106 -1.077926 0.000000 0.000000 1.368425 -3.551110 89.954376 0.000000 -0.000000 0.045626 180.000000 -0.000000 0.000000 4.189609 -0.000008 0.000009 0.000000 -0.000000 0.000000 179.059143 -0.595145 179.993988 -2.861097 0.000000 0.000000 1.965764 -0.594977 0.015151 89.999992 -0.000000 0.000000 180.000000 -0.000000 -0.000000 179.059143 0.595149 -179.994293 -2.861097 0.000000 0.000000 1.965765 0.594988 -0.015151 89.999992 -0.000000 0.000000 0.000000 -0.000000 0.000000 0.000000 -0.000000 0.000000 

@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0",
+  "profile_name": "source_passthrough",
+  "profile_version": "1.0.0",
+  "description": "Outputs every detected SAM-3D source joint directly. Clean baseline for new mappings.",
+  "rotation_space": "local_parent",
+  "output_coordinate_system": {
+    "up": "Y",
+    "forward": "Z",
+    "handedness": "right",
+    "units": "meters"
+  },
+  "passthrough_source_joints": true,
+  "global_transform": {
+    "translation_scale": 1.0,
+    "translation_offset": [0.0, 0.0, 0.0],
+    "rotation_offset_deg": [0.0, 0.0, 0.0],
+    "rotation_offset_mode": "post"
+  },
+  "bones": []
+}
