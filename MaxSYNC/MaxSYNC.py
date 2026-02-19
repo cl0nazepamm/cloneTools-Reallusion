@@ -52,6 +52,46 @@ def _build_message(mode, fbx_path):
     return f"{PROTOCOL_VERSION}|{mode}|{fbx_path}"
 
 
+def _status_to_text(status):
+    """Return a readable RStatus label instead of a SWIG proxy repr."""
+    if status is None:
+        return "None"
+
+    status_enum = getattr(RLPy, "RStatus", None)
+    if status_enum is not None:
+        for name in dir(status_enum):
+            if name.startswith("_"):
+                continue
+            try:
+                candidate = getattr(status_enum, name)
+                if status == candidate:
+                    try:
+                        return f"{name} ({int(candidate)})"
+                    except Exception:
+                        return name
+            except Exception:
+                continue
+
+    try:
+        return str(status)
+    except Exception:
+        return repr(status)
+
+
+def _flag_enabled(mask, flag):
+    try:
+        return (int(mask) & int(flag)) != 0
+    except Exception:
+        return False
+
+
+def _clear_flag(mask, flag):
+    try:
+        return int(mask) & ~int(flag)
+    except Exception:
+        return mask
+
+
 def _parse_message(data):
     """
     Protocol:
@@ -704,8 +744,8 @@ class MaxSyncWidget(QtWidgets.QWidget):
     def get_axis_option(self, name_prefix=""):
         flags = RLPy.EExportFbxOptions2_ResetBoneScale
 
-        if name_prefix and hasattr(RLPy, "EExportFbxOptions2_PrefixAndPostfix"):
-            flags |= RLPy.EExportFbxOptions2_PrefixAndPostfix
+        # Prefix/suffix is applied after import on the Max side.
+        # Keeping FBX export PrefixAndPostfix off avoids exporter failures.
 
         if self.radio_yup.isChecked():
             flags |= RLPy.EExportFbxOptions2_YUp
@@ -763,13 +803,30 @@ class MaxSyncWidget(QtWidgets.QWidget):
             motion_path
         )
 
+        remove_root_flag = getattr(RLPy, "EExportFbxOptions_RemoveBoneRoot", 0)
+        if status != RLPy.RStatus.Success and _flag_enabled(opt1, remove_root_flag):
+            retry_opt1 = _clear_flag(opt1, remove_root_flag)
+            retry_status = RLPy.RFileIO.ExportFbxFile(
+                avatar, fbx_path,
+                retry_opt1, opt2, opt3,
+                RLPy.EExportTextureSize_Original,
+                RLPy.EExportTextureFormat_Default,
+                motion_path
+            )
+            if retry_status == RLPy.RStatus.Success:
+                status = retry_status
+                self.lbl_info.setText(
+                    "Warning: Remove Bone Root failed on this avatar; exported without removing root."
+                )
+                QtWidgets.QApplication.processEvents()
+
         try:
             os.remove(motion_path)
         except OSError:
             self.lbl_info.setText("Warning: could not remove temporary motion cache file.")
 
         if status != RLPy.RStatus.Success:
-            self.lbl_info.setText(f"Export Failed: {status}")
+            self.lbl_info.setText(f"Export Failed: {_status_to_text(status)}")
             return
 
         # Send to Max
@@ -799,8 +856,6 @@ class MaxSyncWidget(QtWidgets.QWidget):
         name_prefix = self._get_name_prefix_for_object(prop)
         opt1 = RLPy.EExportFbxOptions__None
         opt2 = RLPy.EExportFbxOptions2_ResetBoneScale
-        if name_prefix and hasattr(RLPy, "EExportFbxOptions2_PrefixAndPostfix"):
-            opt2 |= RLPy.EExportFbxOptions2_PrefixAndPostfix
         opt3 = RLPy.EExportFbxOptions3__None
 
         status = RLPy.RFileIO.ExportFbxFile(
@@ -812,7 +867,7 @@ class MaxSyncWidget(QtWidgets.QWidget):
         )
 
         if status != RLPy.RStatus.Success:
-            self.lbl_info.setText(f"Export Failed: {status}")
+            self.lbl_info.setText(f"Export Failed: {_status_to_text(status)}")
             return
 
         # Send to Max
@@ -842,6 +897,8 @@ class MaxSyncWidget(QtWidgets.QWidget):
                 prefix = _sanitize_affix(name_prefix)
                 if prefix:
                     message += f"|prefix={quote(prefix, safe='')}"
+                if obj_type == "avatar" and self.chk_remove_root.isChecked():
+                    message += "|remove_root=1"
                 s.sendall(message.encode('utf-8'))
 
             self.lbl_info.setText(f"Sent ({mode})!")

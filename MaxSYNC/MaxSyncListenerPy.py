@@ -198,10 +198,69 @@ class MaxSyncPythonBridge(QtCore.QObject):
         rt.FBXImporterSetParam("ScaleConversion", False)
         rt.FBXImporterSetParam("UpAxis", "Z")
 
+    def _remove_import_root_nodes(self, imported_nodes):
+        rt = pymxs.runtime
+        if not imported_nodes:
+            return 0
+
+        imported_handles = set()
+        for node in imported_nodes:
+            try:
+                imported_handles.add(int(node.handle))
+            except Exception:
+                continue
+
+        candidates = []
+        for node in imported_nodes:
+            try:
+                node_name = str(node.name).lower()
+            except Exception:
+                continue
+            if "boneroot" not in node_name:
+                continue
+
+            try:
+                parent = node.parent
+                parent_handle = int(parent.handle) if parent is not None else None
+            except Exception:
+                parent_handle = None
+
+            if parent_handle in imported_handles:
+                continue
+            candidates.append(node)
+
+        removed = 0
+        for root in candidates:
+            try:
+                parent = root.parent
+            except Exception:
+                parent = None
+
+            children = []
+            try:
+                for child in root.children:
+                    children.append(child)
+            except Exception:
+                children = []
+
+            for child in children:
+                try:
+                    child.parent = parent
+                except Exception:
+                    continue
+
+            try:
+                rt.delete(root)
+                removed += 1
+            except Exception:
+                continue
+
+        return removed
+
     def _parse_message(self, raw):
         text = (raw or "").replace("\r", "").replace("\n", "").strip()
         if not text:
-            return ("invalid", "", "", "", "")
+            return ("invalid", "", "", "", "", False)
 
         parts = text.split("|")
         if len(parts) >= 3 and parts[0] == PROTOCOL_VERSION:
@@ -217,6 +276,7 @@ class MaxSyncPythonBridge(QtCore.QObject):
             fbx_path = parts[2].strip() if len(parts) > 2 else ""
             prefix = ""
             suffix = ""
+            remove_root = False
             for token in parts[3:]:
                 if "=" not in token:
                     continue
@@ -227,11 +287,13 @@ class MaxSyncPythonBridge(QtCore.QObject):
                     prefix = value
                 elif key == "suffix":
                     suffix = value
-            return ("import", mode, fbx_path, prefix, suffix)
+                elif key == "remove_root":
+                    remove_root = str(value).strip().lower() in {"1", "true", "yes", "on"}
+            return ("import", mode, fbx_path, prefix, suffix, remove_root)
 
         fbx_path = parts[0].strip() if parts else ""
         mode = parts[1].strip().lower() if len(parts) > 1 else "skeleton"
-        return ("import", mode, fbx_path, "", "")
+        return ("import", mode, fbx_path, "", "", False)
 
     def _normalize_quat(self, qx, qy, qz, qw):
         mag2 = (qx * qx) + (qy * qy) + (qz * qz) + (qw * qw)
@@ -468,12 +530,12 @@ class MaxSyncPythonBridge(QtCore.QObject):
                     if payload_type == "live":
                         self._latest_live = (parsed[1], parsed[2], parsed[3])
                     elif payload_type == "import":
-                        self._import_queue.append((parsed[1], parsed[2], parsed[3], parsed[4]))
+                        self._import_queue.append((parsed[1], parsed[2], parsed[3], parsed[4], parsed[5]))
             except Exception as exc:
                 if self.running:
                     self._log(f"Listener socket error: {exc}")
 
-    def _process_import(self, mode, fbx_path, prefix="", suffix=""):
+    def _process_import(self, mode, fbx_path, prefix="", suffix="", remove_root=False):
         rt = pymxs.runtime
         if not fbx_path:
             self._log("Invalid message: missing FBX path.")
@@ -488,6 +550,10 @@ class MaxSyncPythonBridge(QtCore.QObject):
             self._setup_fbx_import(mode=mode)
             rt.importFile(fbx_path, rt.name("noPrompt"))
             imported_nodes = self._collect_imported_nodes(before_handles)
+            if remove_root:
+                removed = self._remove_import_root_nodes(imported_nodes)
+                if removed > 0:
+                    self._log(f"Removed {removed} imported root bone node(s).")
             renamed = self._apply_import_name_affixes(imported_nodes, prefix, suffix)
             if renamed > 0:
                 self._log(f"Applied prefix/suffix to {renamed} imported node(s).")
@@ -620,12 +686,16 @@ class MaxSyncPythonBridge(QtCore.QObject):
                 self._latest_live = None
 
         for item in imports:
-            if len(item) >= 4:
+            if len(item) >= 5:
+                mode, fbx_path, prefix, suffix, remove_root = item[0], item[1], item[2], item[3], item[4]
+            elif len(item) >= 4:
                 mode, fbx_path, prefix, suffix = item[0], item[1], item[2], item[3]
+                remove_root = False
             else:
                 mode, fbx_path = item[0], item[1]
                 prefix, suffix = "", ""
-            self._process_import(mode, fbx_path, prefix, suffix)
+                remove_root = False
+            self._process_import(mode, fbx_path, prefix, suffix, remove_root)
 
         if live_msg is not None:
             self._process_live_data(live_msg[0], live_msg[1], live_msg[2])
