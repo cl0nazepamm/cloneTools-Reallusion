@@ -391,6 +391,8 @@ def live_stream_loop(widget):
     cached_nodes = []
     cached_selected_name = ""
     next_selection_refresh = 0.0
+    last_sent_transforms = {}
+    last_sent_prefix = ""
 
     try:
         while live_stream_running:
@@ -403,9 +405,12 @@ def live_stream_loop(widget):
 
             stream_nodes = cached_nodes
             if not stream_nodes:
+                last_sent_transforms = {}
+                last_sent_prefix = ""
                 continue
 
             prefix = _sanitize_affix(widget.get_live_name_prefix(cached_selected_name))
+            current_transforms = {}
             entries = []
             for obj in stream_nodes:
                 name = _object_name(obj)
@@ -414,9 +419,27 @@ def live_stream_loop(widget):
                 pos, rot = _extract_world_transform(obj)
                 if pos is None or rot is None:
                     continue
+                current_transforms[name] = (pos, rot)
                 entries.append(_encode_live_entry(name, pos, rot, prefix))
 
             if not entries:
+                last_sent_transforms = {}
+                last_sent_prefix = ""
+                continue
+
+            # Wait/send only when data changed (or selection/prefix changed).
+            should_send = prefix != last_sent_prefix
+            if not should_send:
+                if set(current_transforms.keys()) != set(last_sent_transforms.keys()):
+                    should_send = True
+                else:
+                    for name, (pos, rot) in current_transforms.items():
+                        prev_pos, prev_rot = last_sent_transforms.get(name, (None, None))
+                        if _transform_changed(prev_pos, prev_rot, pos, rot):
+                            should_send = True
+                            break
+
+            if not should_send:
                 continue
 
             frame_index = _current_frame_index()
@@ -430,6 +453,8 @@ def live_stream_loop(widget):
                     client.sendall(message.encode("utf-8"))
                 warned_connection = False
                 packet_count += 1
+                last_sent_transforms = current_transforms
+                last_sent_prefix = prefix
                 if packet_count == 1 or packet_count % 100 == 0:
                     widget.update_status.emit(
                         f"Live stream active: frame={frame_index}, nodes={len(entries)}"
